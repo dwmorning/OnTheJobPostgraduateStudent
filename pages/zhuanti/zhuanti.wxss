@@ -1,0 +1,26 @@
+.list {
+    float: left;
+    margin-bottom: 30rpx;
+    margin-right: 20rpx;
+    text-align: center;
+    width: 335rpx;
+}
+
+.list:nth-child(2n) {
+    margin-right: 0;
+}
+
+.list image {
+    border-radius: 3px;
+    height: 175rpx;
+    margin-bottom: 10rpx;
+    width: 100%;
+}
+
+.list text {
+    display: block;
+    font-size: 24rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    overflow: hidden;
+}

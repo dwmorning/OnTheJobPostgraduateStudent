@@ -1,0 +1,39 @@
+<view class="content p10">
+    <block wx:for="{{list}}" wx:key="zixun">
+        <view wx:if="{{item.wzlx=='jz'}}">
+            <navigator class="jzCont" url="../rules/show/show?catid={{item.catid}}&id={{item.news_id}}">
+                <view class="list">
+                    <view class="left">
+                        <image src="https://www.125yan.com/Uploads/{{item.xxthumb}}" wx:if="item.xxthumb!==\"\""></image>
+                    </view>
+                    <view class="right">
+                        <view class="tit">{{item.short_title}}<text class="pri">{{item.show_money}}</text>
+                        </view>
+                        <view class="sub">{{item.xxmc}} / {{item.xymc}}</view>
+                        <view class="tag">
+                            <text>{{item.zymc}}</text>
+                            <text>{{item.length}}</text>
+                            <text>{{item.fs}}</text>
+                            <text>{{item.dq}}</text>
+                        </view>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+        <view wx:else>
+            <navigator url="../showContent/index?catid={{item.catid}}&id={{item.news_id}}">
+                <view class="item">
+                    <view class="info">
+                        <view class="tit">{{item.title}}</view>
+                        <view class="det">{{item.description}}</view>
+                        <view class="sub">
+                            <view>{{item.inputtime}}</view>
+                            <view>
+                                <i class="iconfont icon-see"></i>{{item.hits_num==null?'0':item.hits_num}}</view>
+                        </view>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+    </block>
+</view>

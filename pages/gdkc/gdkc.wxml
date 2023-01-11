@@ -1,0 +1,157 @@
+<view class="dbTab">
+    <view class="top">
+        <view class="list">
+            <view class="listv">
+                <view class="way">途径<text>1</text>
+                </view>
+                <view class="tit">高级研修</view>
+                <view class="btn">
+                    <navigator url="../type/show/show?typeid=7&majortxt=gjyx">进入高级研修</navigator>
+                </view>
+            </view>
+            <view class="mid"></view>
+            <view class="listv">
+                <view class="way">途径<text>2</text>
+                </view>
+                <view class="tit">高端培训</view>
+                <view class="btn">
+                    <navigator url="../type/gdpx/gdpx?majorid=0">进入高端培训</navigator>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="cont">
+        <view class="list">
+            <view class="listv">
+                <icon class="iconfont icon-xing"></icon>
+                <icon class="iconfont icon-xing"></icon>
+                <icon class="iconfont icon-xing"></icon>
+                <icon class="iconfont icon-xing"></icon>
+            </view>
+            <view class="mid">
+                <text>难易程度</text>
+            </view>
+            <view class="listv">
+                <icon class="iconfont icon-xing"></icon>
+                <icon class="iconfont icon-xing"></icon>
+                <icon class="iconfont icon-xing"></icon>
+            </view>
+        </view>
+        <view class="list">
+            <view class="listv">
+                <view class="num">{{gjyx}}人浏览</view>
+                <view bindtap="bm0" class="need {{bmid0==0?'active':''}}" data-id="0">
+                    <i class="iconfont icon-xin"></i>想报名</view>
+            </view>
+            <view class="mid">
+                <text>难易程度</text>
+            </view>
+            <view class="listv">
+                <view class="num">{{gdpx}}人浏览</view>
+                <view bindtap="bm1" class="need {{bmid1==1?'active':''}}" data-id="1">
+                    <i class="iconfont icon-xin"></i>想报名</view>
+            </view>
+        </view>
+        <view class="list">
+            <view class="listv">免试入学 择优录取</view>
+            <view class="mid">
+                <text>入学方式</text>
+            </view>
+            <view class="listv">免试入学 择优录取</view>
+        </view>
+        <view class="list">
+            <view class="listv">招生院校根据课程自行安排，请查看<navigator class="lk" url="../rules/rules?typeid=7&schoolid=0&majorid=0">招生简章</navigator>或<button class="zx" openType="contact">咨询</button>
+            </view>
+            <view class="mid">
+                <text>报名时间</text>
+            </view>
+            <view class="listv">根据课程自行安排，请查看招生简章<navigator class="lk" url="../type/gdpx/gdpx?majorid=0">招生简章</navigator>或<button class="zx" openType="contact">咨询</button>
+            </view>
+        </view>
+        <view class="list">
+            <view class="listv">企业、事业单位、政府机构董事长及经理人等人员；免试入学参加高级研修班…</view>
+            <view class="mid">
+                <text>报名条件</text>
+            </view>
+            <view class="listv">主要包含相关行业的专业人士、企事业单位中、高层管理者、企业家、股东等…</view>
+        </view>
+        <view class="list">
+            <view class="listv">2年</view>
+            <view class="mid">
+                <text>学习时长</text>
+            </view>
+            <view class="listv">短则几天，长则1-2年</view>
+        </view>
+        <view class="list">
+            <view class="listv">周末班、集中班、远程班</view>
+            <view class="mid">
+                <text>学习方式</text>
+            </view>
+            <view class="listv">周末班</view>
+        </view>
+        <view class="list">
+            <view class="listv">学位证<icon class="iconfont icon-no"></icon>结业证<icon class="iconfont icon-yes"></icon>
+            </view>
+            <view class="mid">
+                <text>获得证书</text>
+            </view>
+            <view class="listv">学位证<icon class="iconfont icon-no"></icon>结业证<icon class="iconfont icon-yes"></icon>
+            </view>
+        </view>
+        <view class="list">
+            <view class="listv">院校自主安排</view>
+            <view class="mid">
+                <text>考试时间</text>
+            </view>
+            <view class="listv">院校自主安排</view>
+        </view>
+        <view class="list">
+            <view class="listv">高级研修班结业考试</view>
+            <view class="mid">
+                <text>考试类型</text>
+            </view>
+            <view class="listv">院校自主安排</view>
+        </view>
+        <view class="list">
+            <view class="listv c1">0.58万~16万</view>
+            <view class="mid">
+                <text>学习费用</text>
+            </view>
+            <view class="listv c1">1万~20万</view>
+        </view>
+        <view class="list">
+            <view class="listv">
+                <navigator url="../school/show/index?schoollid={{item.id}}&majortxt=gjyx&typeid=7" wx:for="{{schList0}}" wx:key="sch0">{{item.name}}</navigator>
+                <navigator class="more" url="../school/school?majorid=0&schoolid=0&typeid=7&majortxt=gjyx">更多院校</navigator>
+            </view>
+            <view class="mid">
+                <text>热门院校</text>
+            </view>
+            <view class="listv"> 暂无 </view>
+        </view>
+        <view class="list">
+            <view class="listv">
+                <navigator url="../rules/rules?majorid={{item.id}}&schoolid=0&typeid=7" wx:for="{{majList0}}" wx:key="maj0">{{item.name}}</navigator>
+                <navigator class="more" url="../major/major?majorid=0&schoolid=0&typeid=7&majortxt=gjyx">更多专业</navigator>
+            </view>
+            <view class="mid">
+                <text>热门专业</text>
+            </view>
+            <view class="listv">
+                <navigator url="../type/gdpx/gdpx?majorid={{item.id}}" wx:for="{{majList1}}" wx:key="maj1">{{item.name}}</navigator>
+                <navigator class="more" url="../type/gdpx/gdpx?majorid=0">更多专业</navigator>
+            </view>
+        </view>
+        <view class="list">
+            <view class="listv">
+                <navigator class="more bgc" url="../type/show/show?typeid=7&majortxt=gjyx">进入高级研修频道</navigator>
+            </view>
+            <view class="mid">
+                <text>频道入口</text>
+            </view>
+            <view class="listv">
+                <navigator class="more bgc" url="../type/gdpx/gdpx?majorid=0">进入高端培训频道</navigator>
+            </view>
+        </view>
+    </view>
+</view>

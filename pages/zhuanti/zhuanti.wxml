@@ -1,0 +1,12 @@
+<view class="ztList p10 clearfix">
+    <view class="list" wx:for="{{ztList}}" wx:key="zt">
+        <navigator url="../showContent/index?catid={{item.catid}}&id={{item.id}}">
+            <image src="https://www.125yan.com/Uploads/{{item.thumb}}" wx:if="{{item.thumb}}"></image>
+            <text>{{item.title}}</text>
+        </navigator>
+    </view>
+</view>
+<view class="nocontent" hidden="{{gobottom==true}}">已经到底了!</view>
+<view class="nocontent" hidden="{{loding==true}}">
+    <image class="loading" src="/images/load.gif"></image>
+</view>

@@ -1,0 +1,25 @@
+<view class="top p10">
+    <navigator url="../showContent/index?catid=92&id=73">
+        <image src="/images/ways.png"></image>
+    </navigator>
+</view>
+<view class="cont clearfix">
+    <navigator class="list" url="../rules/rules?typeid={{item.id}}&schoolid=0&majorid=0" wx:for="{{wayList}}" wx:key="way">
+        <image class="img" src="/images/{{item.img}}.png"></image>
+        <view>
+            <view class="tit">{{item.name}}</view>
+            <view class="sub">简章库</view>
+        </view>
+    </navigator>
+    <navigator class="list" url="../type/gdpx/gdpx">
+        <image class="img" src="/images/gdpx.png"></image>
+        <view>
+            <view class="tit">高端培训</view>
+            <view class="sub">简章库</view>
+        </view>
+    </navigator>
+</view>
+<button class="kefu" openType="contact" sessionFrom="looyu">
+    <image class="kefu-img" mode="" src="/images/kf.png"></image>
+    <text class="kefu-txt">咨询</text>
+</button>

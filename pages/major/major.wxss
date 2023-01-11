@@ -1,0 +1,116 @@
+.hot {
+    background-color: #4c6ff1;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding: 30rpx;
+}
+
+.hot .tit {
+    color: #fff;
+    font-size: 32rpx;
+    font-weight: 700;
+    margin-bottom: 10rpx;
+}
+
+.hot .cont {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hot .cont view {
+    background-color: #fff;
+    border-radius: 50rpx;
+    color: #4c6ff1;
+    font-size: 24rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    margin-left: 40rpx;
+    margin-top: 20rpx;
+    text-align: center;
+    width: 183rpx;
+}
+
+.hot .cont view:nth-child(3n-2) {
+    margin-left: 0;
+}
+
+.malt {
+    box-shadow: 0 0 20px #ddd;
+    overflow: scroll;
+    padding: 30rpx 0 30rpx 30rpx;
+    white-space: nowrap;
+}
+
+.malt view {
+    border: 1px solid #ccc;
+    border-radius: 50rpx;
+    box-sizing: border-box;
+    color: #666;
+    display: inline-block;
+    font-size: 24rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    margin-right: 30rpx;
+    padding: 0 25rpx;
+}
+
+.malt view.gray {
+    background-color: #f0f0f0;
+    border-color: #f0f0f0;
+}
+
+.majCont .list {
+    border-bottom: 1px solid #ebebeb;
+    padding: 25rpx 0;
+    position: relative;
+}
+
+.majCont .list::after {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #829bf5;
+    content: "\e605";
+    font-family: iconfont!important;
+    font-size: 16px;
+    font-size: 50rpx;
+    font-style: normal;
+    margin-top: -25rpx;
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+
+.majCont .tit {
+    font-size: 36rpx;
+}
+
+.majCont .sub {
+    color: #666;
+    font-size: 24rpx;
+    margin-top: 10rpx;
+}
+
+.majCont .sub text {
+    color: #4c6ff1;
+    margin-right: 30rpx;
+}
+
+.majCont .sub .c2 {
+    color: #be4039;
+}
+
+.majCont .title {
+    border-bottom: 1px solid #eaeaea;
+    font-size: 36rpx;
+    font-weight: 700;
+    height: 100rpx;
+    line-height: 100rpx;
+    padding-top: 20rpx;
+}
+
+.majCont .title text {
+    color: #ff8e01;
+    float: right;
+    font-size: 24rpx;
+    font-weight: 400;
+}

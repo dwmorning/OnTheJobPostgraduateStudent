@@ -1,0 +1,85 @@
+<view class="tabTit flex">
+    <view bindtap="filterTab" class="flex1 {{!tab[index]?'active':''}}" data-index="{{index}}" wx:for="{{tabTxt}}" wx:key="tab">
+        <text>{{item}}</text>
+        <i class="tabIcon"></i>
+    </view>
+</view>
+<view class="tabContent clearfix">
+    <view catchtouchmove="preventTouchMove" hidden="{{tab[0]}}">
+        <view catchtouchmove="preventTouchMove" class="mask"></view>
+        <view class="rightCap">
+            <view bindtap="jumpToSch" class="{{schView==item.zm?'active':''}}" data-malt="{{item.zm}}" wx:for="{{schoolList}}" wx:key="cap">{{item.zm}}</view>
+        </view>
+        <scroll-view scrollY class="tabLayer tabLayer1" scrollIntoView="{{schView}}" scrollWithAnimation="true" style="height:{{scrollH}}px">
+            <view bindtap="filter" class="noLimit {{school_id==0?'active':''}}" data-areaid="{{area_id}}" data-areazid="{{areaz_id}}" data-banid="{{ban_id}}" data-feeid="{{fee_id}}" data-id="0" data-index="0" data-schoolid="0" data-sortid="{{sort_id}}" data-txt="学校">不限</view>
+            <block wx:for="{{schoolList}}" wx:key="school">
+                <view class="title" id="{{item.zm}}">{{item.zm}}</view>
+                <view class="list p10">
+                    <view bindtap="filter" class="{{school_id==xx.id?'active':''}}" data-areaid="{{area_id}}" data-areazid="{{areaz_id}}" data-banid="{{ban_id}}" data-feeid="{{fee_id}}" data-id="{{xx.id}}" data-index="0" data-schoolid="{{xx.id}}" data-sortid="{{sort_id}}" data-txt="{{xx.title}}" wx:for="{{item.xx}}" wx:for-item="xx" wx:key="xx">{{xx.title}}</view>
+                </view>
+            </block>
+        </scroll-view>
+    </view>
+    <view catchtouchmove="preventTouchMove" hidden="{{tab[1]}}">
+        <view catchtouchmove="preventTouchMove" class="mask"></view>
+        <scroll-view scrollY class="tabLayer" style="max-height:{{scrollH}}px">
+            <view class="tabLayer2 {{allArea==true?'show':''}}">
+                <scroll-view scrollY class="left" style="max-height:{{scrollH}}px">
+                    <view bindtap="filter" class="{{area_id==0?'active':''}}" data-areaid="0" data-areazid="{{areaz_id}}" data-banid="{{ban_id}}" data-feeid="{{fee_id}}" data-id="0" data-index="1" data-schoolid="{{school_id}}" data-sortid="{{sort_id}}" data-txt="全部地区">全部地区</view>
+                    <view bindtap="filter" class="{{area_id==item.id?'active':''}}" data-area="allArea" data-areaid="{{item.id}}" data-areazid="{{areaz_id}}" data-banid="{{ban_id}}" data-feeid="{{fee_id}}" data-id="{{item.id}}" data-index="1" data-schoolid="{{school_id}}" data-sortid="{{sort_id}}" data-txt="{{item.name}}" wx:for="{{areaList}}" wx:key="area">{{item.name}}</view>
+                </scroll-view>
+                <view class="right">
+                    <view bindtap="filter" class="{{areaz_id==0?'active':''}}" data-area="allAreaz" data-areaid="{{area_id}}" data-areazid="0" data-banid="{{ban_id}}" data-feeid="{{fee_id}}" data-id="0" data-index="1" data-schoolid="{{school_id}}" data-sortid="{{sort_id}}" data-txt="{{ztxt}}">不限</view>
+                    <view bindtap="filter" class="{{areaz_id==item.id?'active':''}}" data-area="allAreaz" data-areaid="{{area_id}}" data-areazid="{{item.id}}" data-banid="{{ban_id}}" data-feeid="{{fee_id}}" data-id="{{item.id}}" data-index="1" data-schoolid="{{school_id}}" data-sortid="{{sort_id}}" data-txt="{{item.name}}" wx:for="{{areaListz}}" wx:key="areaz">{{item.name}}</view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view catchtouchmove="preventTouchMove" hidden="{{tab[2]}}">
+        <view catchtouchmove="preventTouchMove" class="mask"></view>
+        <view class="tabLayer tabLayer3">
+            <view class="title">方式</view>
+            <text bindtap="filter" class="{{ban_id==0?'active':''}}" data-areaid="{{area_id}}" data-areazid="{{areaz_id}}" data-banid="0" data-feeid="{{fee_id}}" data-filter="filterFs" data-id="0" data-index="2" data-schoolid="{{school_id}}" data-sortid="{{sort_id}}" data-txt="不限">不限</text>
+            <text bindtap="filter" class="{{ban_id==item.id?'active':''}}" data-areaid="{{area_id}}" data-areazid="{{areaz_id}}" data-banid="{{item.id}}" data-feeid="{{fee_id}}" data-filter="filterFs" data-id="{{item.id}}" data-index="2" data-schoolid="{{school_id}}" data-sortid="{{sort_id}}" data-txt="{{item.name}}" wx:for="{{banList}}" wx:key="ban">{{item.name}}</text>
+            <view class="title">学费</view>
+            <text bindtap="filter" class="{{fee_id==0?'active':''}}" data-areaid="{{area_id}}" data-areazid="{{areaz_id}}" data-banid="{{ban_id}}" data-feeid="0" data-filter="filterXf" data-id="0" data-index="2" data-schoolid="{{school_id}}" data-sortid="{{sort_id}}" data-txt="不限">不限</text>
+            <text bindtap="filter" class="{{fee_id==item.id?'active':''}}" data-areaid="{{area_id}}" data-areazid="{{areaz_id}}" data-banid="{{ban_id}}" data-feeid="{{item.id}}" data-filter="filterXf" data-id="{{item.id}}" data-index="2" data-schoolid="{{school_id}}" data-sortid="{{sort_id}}" data-txt="{{item.name}}" wx:for="{{feeList}}" wx:key="fee">{{item.name}}</text>
+            <view class="tabBtn">
+                <view bindtap="resetFilter" data-areaid="{{area_id}}" data-areazid="{{areaz_id}}" data-banid="0" data-feeid="0" data-schoolid="{{school_id}}" data-sortid="{{sort_id}}">重置</view>
+                <view bindtap="hideFilter">确定</view>
+            </view>
+        </view>
+    </view>
+    <view catchtouchmove="preventTouchMove" hidden="{{tab[3]}}">
+        <view catchtouchmove="preventTouchMove" class="mask"></view>
+        <view class="tabLayer tabLayer4">
+            <view bindtap="filter" class="{{sort_id==0?'active':''}}" data-areaid="{{area_id}}" data-areazid="{{areaz_id}}" data-banid="{{ban_id}}" data-feeid="{{fee_id}}" data-id="0" data-index="3" data-schoolid="{{school_id}}" data-sortid="0" data-txt="综合排序">综合排序</view>
+            <view bindtap="filter" class="{{sort_id==item.id?'active':''}}" data-areaid="{{area_id}}" data-areazid="{{areaz_id}}" data-banid="{{ban_id}}" data-feeid="{{fee_id}}" data-id="{{item.id}}" data-index="3" data-schoolid="{{school_id}}" data-sortid="{{item.id}}" data-txt="{{item.name}}" wx:for="{{sortList}}" wx:key="sort">{{item.name}}</view>
+        </view>
+    </view>
+</view>
+<view class="jzCont p10">
+    <navigator url="../rules/show/show?catid={{item.catid}}&id={{item.id}}&typeid=2&school={{item.xxmc}}" wx:for="{{jzList}}" wx:key="jz">
+        <view class="list">
+            <view class="left">
+                <image src="https://www.125yan.com/Uploads/{{item.xxthumb}}" wx:if="{{item.xxthumb!==''}}"></image>
+            </view>
+            <view class="right">
+                <view class="tit">{{item.short_title}}<text class="pri">{{item.show_money}}</text>
+                </view>
+                <view class="sub">{{item.xxmc}} / {{item.xymc}}</view>
+                <view class="tag">
+                    <text>{{item.zymc}}</text>
+                    <text>{{item.length}}</text>
+                    <text>{{item.ksfs}}</text>
+                    <text>{{item.skdq}}</text>
+                </view>
+            </view>
+        </view>
+    </navigator>
+</view>
+<view class="nocontent" hidden="{{nocont==true}}">暂无内容!</view>
+<view class="nocontent" hidden="{{gobottom==true}}">没有更多了!</view>
+<view class="nocontent" hidden="{{loding==true}}">
+    <image class="loading" src="/images/load.gif"></image>
+</view>

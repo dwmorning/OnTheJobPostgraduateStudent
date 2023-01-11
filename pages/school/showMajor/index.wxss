@@ -1,0 +1,639 @@
+page {
+    background-color: #f3f3f3;
+}
+
+#lxHeight {
+    padding-top: 30rpx;
+}
+
+.top {
+    align-items: center;
+    background-color: #4c6ff1;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #fff;
+    display: flex;
+    height: 160rpx;
+    justify-content: space-between;
+    padding: 30rpx;
+}
+
+.logo {
+    background-color: #fff;
+    border: 10rpx solid #fff;
+    margin-right: 15rpx;
+}
+
+.logo,.logo image {
+    border-radius: 50%;
+    height: 80rpx;
+    width: 80rpx;
+}
+
+.top .tit {
+    font-size: 32rpx;
+    font-weight: 700;
+    margin-bottom: 15rpx;
+}
+
+.top .sub text {
+    border: 1px solid #fff;
+    border-radius: 35rpx;
+    display: inline-block;
+    font-size: 24rpx;
+    height: 35rpx;
+    line-height: 38rpx;
+    margin-right: 10rpx;
+    padding: 0 10px;
+}
+
+.top .mid {
+    flex: 1;
+}
+
+.top .right {
+    font-size: 24rpx;
+}
+
+.lxCont .tit {
+    font-size: 32rpx;
+    height: 110rpx;
+    line-height: 120rpx;
+}
+
+.lxCont .cont {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lxCont .cont view {
+    background-color: #fff;
+    border-radius: 3px;
+    font-size: 28rpx;
+    height: 130rpx;
+    margin-bottom: 30rpx;
+    margin-right: 30rpx;
+    width: 210rpx;
+}
+
+.lxCont .cont view.active {
+    background-color: #ff8e01;
+    color: #fff;
+}
+
+.lxCont .cont view .flex {
+    background-color: initial;
+}
+
+.lxCont .cont button,.lxCont .cont view .flex,.lxCont .cont view navigator {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 130rpx;
+    justify-content: center;
+    padding: 0;
+}
+
+.lxCont .cont button {
+    background-color: #fff;
+    line-height: normal;
+}
+
+.lxCont .cont button:after {
+    content: normal;
+}
+
+.lxCont .cont view:nth-child(3n) {
+    margin-right: 0;
+}
+
+.lxCont .cont view image {
+    height: 40rpx;
+    margin-bottom: 5px;
+    width: 40rpx;
+}
+
+.lxCont .cont view text {
+    font-size: 28rpx;
+}
+
+.bigTab {
+    display: flex;
+    font-size: 32rpx;
+    height: 100rpx;
+    justify-content: space-between;
+    line-height: 100rpx;
+}
+
+.bigTab .flex1 {
+    position: relative;
+}
+
+.bigTab .flex1.active {
+    font-weight: 700;
+}
+
+.bigTab .flex1.active::after {
+    background-color: #4c6ff1;
+    border-radius: 12rpx;
+    bottom: 10px;
+    content: "";
+    height: 6rpx;
+    left: 50%;
+    margin-left: -15rpx;
+    position: absolute;
+    width: 30rpx;
+}
+
+.tabTit {
+    align-items: center;
+    background: #fff;
+    border-bottom: 1px solid #eaeaea;
+    border-top: 1px solid #eaeaea;
+    box-sizing: border-box;
+    color: #333;
+    display: flex;
+    font-size: 28rpx;
+    height: 90rpx;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.tabTit .flex1 {
+    background-color: #f3f3f3;
+    border-radius: 50rpx;
+    flex: 1;
+    font-size: 24rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    margin: 20rpx 10rpx;
+    overflow: hidden;
+    padding: 0 15px;
+    position: relative;
+    text-align: center;
+    width: 160rpx;
+}
+
+.tabTit .flex1:first-child {
+    margin-left: 0;
+}
+
+.tabTit .flex1:last-child {
+    margin-right: 0;
+}
+
+.tabIcon {
+    border-left: 10rpx solid transparent;
+    border-right: 10rpx solid transparent;
+    border-top: 10rpx solid #c9c9c9;
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: 2px;
+}
+
+.tabTit .active {
+    background-color: #4c6ff1;
+    color: #fff;
+}
+
+.tabTit .active .tabIcon {
+    border-top-color: #fff;
+    transform: rotate(180deg);
+}
+
+.tabContent {
+    position: relative;
+}
+
+.tabLayer {
+    border-top: 1px solid #eee;
+    box-sizing: border-box;
+    left: -30rpx;
+    overflow: hidden;
+    position: absolute;
+    top: -1px;
+    width: 750rpx;
+    z-index: 3;
+}
+
+.mask {
+    background: rgba(0,0,0,.5);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 90rpx;
+    width: 100%;
+    z-index: 2;
+}
+
+.tabLayer1 {
+    padding-bottom: 20rpx;
+}
+
+.tabLayer1 .cont {
+    background-color: #f3f3f3;
+    padding: 0 30rpx 20rpx;
+    position: relative;
+    z-index: 3;
+}
+
+.tabLayer1 .cont view {
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #666;
+    float: left;
+    font-size: 24rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    margin-left: 20rpx;
+    margin-top: 20rpx;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 157rpx;
+}
+
+.tabLayer1 .cont view:nth-child(3n-2) {
+    margin-left: 0;
+}
+
+.tabLayer1 .cont view {
+    width: 216rpx;
+}
+
+.tabLayer .cont view.active {
+    background-color: #dee5ff;
+    border-color: #4c6ff1;
+    color: #4c6ff1;
+}
+
+.tabLayer2 {
+    z-index: 3;
+}
+
+.tabLayer2 view.active {
+    color: #4c6ff1;
+}
+
+.tabLayer2 .right view.active:after,.tabLayer4 view.active:after {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e618";
+    font-family: iconfont!important;
+    font-size: 20px;
+    font-style: normal;
+    position: absolute;
+    right: 30rpx;
+}
+
+.tabLayer2 {
+    background-color: #fff;
+    position: relative;
+}
+
+.tabLayer2.show .left {
+    width: 260rpx;
+}
+
+.tabLayer2.show .right {
+    transform: translateX(0);
+}
+
+.tabLayer2 .left {
+    background-color: #efefef;
+    overflow: scroll;
+    text-align: center;
+}
+
+.tabLayer2 .left view {
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.tabLayer2 .right {
+    box-sizing: border-box;
+    left: 260rpx;
+    padding: 0 30rpx;
+    position: absolute;
+    top: 0;
+    transform: translateX(100%);
+    transition: transform .2s;
+    transition: transform .2s,-webkit-transform .2s;
+    width: 490rpx;
+}
+
+.tabLayer2 .right view {
+    border-bottom: 1px solid #ccc;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.jzConts .list {
+    border-bottom: 1px solid #eaeaea;
+    display: flex;
+    justify-content: space-between;
+    padding: 30rpx 0;
+}
+
+.jzConts .tit {
+    font-size: 32rpx;
+    font-weight: 700;
+}
+
+.jzConts .tit view {
+    display: inline-block;
+    height: 42rpx;
+    max-width: 400rpx;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.jzConts .tit text {
+    border-left: 1px solid #eaeaea;
+    font-size: 24rpx;
+    font-weight: 400;
+    margin-left: 10px;
+    padding-left: 10px;
+}
+
+.jzConts .tit text.tag1 {
+    color: #25854a;
+}
+
+.jzConts .tit text.tag2 {
+    color: #445537;
+}
+
+.jzConts .tit text.tag3 {
+    color: #ec403f;
+}
+
+.jzConts .tit text.tag4 {
+    color: #396cad;
+}
+
+.jzConts .tit text.tag5 {
+    color: #5863cc;
+}
+
+.jzConts .tit text.tag6 {
+    color: #f97105;
+}
+
+.jzConts .tit text.tag7 {
+    color: #164599;
+}
+
+.jzConts .sub {
+    color: #666;
+    font-size: 24rpx;
+    margin: 15rpx 0;
+}
+
+.jzConts .sub text {
+    border-left: 1px solid #eaeaea;
+    display: inline-block;
+    height: 32rpx;
+    line-height: 32rpx;
+    margin-left: 10px;
+    max-width: 100px;
+    overflow: hidden;
+    padding-left: 10px;
+}
+
+.jzConts .sub text:first-child {
+    border: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.jzConts .gzd {
+    color: #666;
+    font-size: 24rpx;
+}
+
+.jzConts .gzd .con {
+    background-color: #f6f6f6;
+    display: inline-block;
+    height: 16rpx;
+    position: relative;
+    width: 200rpx;
+}
+
+.jzConts .gzd .con view {
+    background-color: #be4039;
+    height: 16rpx;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+.jzConts .right {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+}
+
+.jzConts .pri {
+    color: #be4039;
+    font-size: 28rpx;
+}
+
+.jzConts .btn {
+    border: 1px solid #4c6ff1;
+    border-radius: 50rpx;
+    color: #4c6ff1;
+    font-size: 24rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    padding: 0 20px;
+}
+
+.zixun .item {
+    background-color: #fff;
+    border-radius: 4px;
+    border-top: 1px solid #eaeaea;
+    display: flex;
+    padding: 25rpx 0;
+}
+
+.zixun .img {
+    display: block;
+    height: 160rpx;
+    margin-right: 20rpx;
+    width: 250rpx;
+}
+
+.zixun .info {
+    flex: 1;
+}
+
+.zixun .tit {
+    color: #333;
+    font-size: 32rpx;
+    font-weight: 700;
+}
+
+.zixun .det {
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: #666;
+    display: -webkit-box;
+    font-size: 28rpx;
+    margin: 10rpx 0;
+    overflow: hidden;
+    text-overflow: -o-ellipsis-lastline;
+    text-overflow: ellipsis;
+}
+
+.zixun .sub {
+    color: #ccc;
+    display: flex;
+    font-size: 24rpx;
+    justify-content: space-between;
+}
+
+.zixun .sub .iconfont {
+    margin-right: 3px;
+    vertical-align: -2px;
+}
+
+.wdList .list {
+    border-top: 1px solid #ebebeb;
+    padding: 20rpx 0;
+}
+
+.wdList .list.show .icon-more {
+    transform: rotate(-90deg);
+}
+
+.wdList .list.show .cont {
+    display: block;
+}
+
+.wdList .list .iconfont {
+    font-size: 34rpx;
+    position: absolute;
+}
+
+.wdList .list .tit {
+    color: #000;
+    font-size: 32rpx;
+    margin-bottom: 10rpx;
+    padding-left: 50rpx;
+    padding-right: 50rpx;
+    position: relative;
+}
+
+.wdList .list .cont {
+    display: none;
+    font-size: 28rpx;
+    padding-left: 50rpx;
+    position: relative;
+}
+
+.wdList .list .icon-more {
+    color: #4c6ff1;
+    right: 0;
+    top: 0;
+    transform: rotate(90deg);
+}
+
+.wdList .list .icon-wen {
+    color: #2047d6;
+    left: 0;
+    margin-right: 4px;
+    top: -6px;
+}
+
+.wdList .list .icon-da {
+    color: #ff8e02;
+    left: 0;
+    margin-right: 4px;
+    top: -7px;
+}
+
+.watermarks {
+    background-image: url("https://www.125yan.com/Public/index/images/water-bg.png");
+    height: 100%;
+    left: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1999;
+}
+
+.stoptop {
+    background-color: #e50026;
+    color: #fff;
+    font-size: 26rpx;
+    line-height: 64rpx;
+    margin: -30rpx -40rpx 30rpx;
+    text-align: center;
+}
+
+.stopwarn {
+    background-color: #fff;
+    border-radius: 10rpx;
+    box-shadow: 0 0 80px 0 rgba(0,0,0,.13);
+    left: 50%;
+    padding: 90rpx 40rpx 40rpx;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 440rpx;
+}
+
+.stopwarn,.stopwarn-bg {
+    position: fixed;
+    z-index: 2000;
+}
+
+.stopwarn-bg {
+    background-color: rgba(0,0,0,.2);
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.stopwarn-c {
+    background-image: url("https://www.125yan.com/Public/index/images/water-close.png");
+    height: 36rpx;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 36rpx;
+}
+
+.stopwarn-c,.stopwarn-i {
+    background-size: 100% 100%;
+}
+
+.stopwarn-i {
+    background-image: url("https://www.125yan.com/Public/index/images/water-warn.png");
+    display: inline-block;
+    height: 40rpx;
+    width: 40rpx;
+}
+
+.stopwarn-t {
+    color: #b4061f;
+    font-size: 26rpx;
+    line-height: 1.6;
+    margin: 10px 0 70rpx;
+}
+
+.stopwarn-b {
+    background-color: #b4061f;
+    border-radius: 8rpx;
+    color: #fff;
+    display: block;
+    font-size: 26rpx;
+    line-height: 64rpx;
+}

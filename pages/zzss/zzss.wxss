@@ -1,0 +1,284 @@
+.dbTab {
+    margin-bottom: 60rpx;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    overflow: scroll;
+}
+
+.list {
+    font-size: 24rpx;
+    padding-left: 130rpx;
+    position: relative;
+    text-align: center;
+}
+
+.list:after {
+    clear: both;
+    content: "";
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.left {
+    background-color: #f5f5f5;
+    left: 30rpx;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 130rpx;
+    z-index: 3;
+}
+
+.left view {
+    border-bottom: 1px solid #ececec;
+    border-left: 1px solid #ececec;
+    border-right: 1px solid #ececec;
+    box-sizing: border-box;
+    height: 90rpx;
+    line-height: 90rpx;
+}
+
+.list .listr {
+    box-sizing: border-box;
+    float: left;
+    width: 260rpx;
+}
+
+.list .right {
+    float: left;
+    width: 1040rpx;
+}
+
+.left .list1 {
+    height: 140rpx;
+    line-height: 140rpx;
+}
+
+.cont .list1 .listr {
+    height: 140rpx;
+    line-height: 2;
+}
+
+.left .list2 {
+    height: 120rpx;
+    line-height: 120rpx;
+}
+
+.cont .list2 .listr {
+    align-items: center;
+    display: flex;
+    height: 120rpx;
+    justify-content: center;
+    line-height: 1.8;
+}
+
+.left .list3 {
+    height: 140rpx;
+    line-height: 140rpx;
+}
+
+.cont .list3 .listr {
+    align-items: center;
+    display: flex;
+    height: 140rpx;
+    justify-content: center;
+    line-height: 1.6;
+}
+
+.left .list4 {
+    height: 200rpx;
+    line-height: 200rpx;
+}
+
+.cont .list4 .listr {
+    align-items: center;
+    display: flex;
+    height: 200rpx;
+    justify-content: center;
+    line-height: 1.6;
+}
+
+.scroll .top {
+    width: 1164rpx;
+}
+
+.top {
+    background-color: #4c6ff1;
+    color: #fff;
+    height: 150rpx;
+    padding: 40rpx 0;
+}
+
+.top .listr {
+    padding: 0 20rpx;
+    position: relative;
+}
+
+.top .listr:after {
+    background-image: url("https://www.125yan.com/Public/m_index/images/vs.png");
+    background-repeat: no-repeat;
+    background-size: 90%;
+    content: "";
+    height: 242rpx;
+    position: absolute;
+    right: -90rpx;
+    top: -40rpx;
+    width: 179rpx;
+    z-index: 0;
+}
+
+.top .listr:last-child:after {
+    content: normal;
+}
+
+.top .way {
+    font-size: 24rpx;
+    position: relative;
+    z-index: 2;
+}
+
+.top .way text {
+    background-color: #ff9400;
+    border-radius: 50%;
+    display: inline-block;
+    font-size: 20rpx;
+    height: 24rpx;
+    line-height: 24rpx;
+    margin-left: 6rpx;
+    vertical-align: 2px;
+    width: 24rpx;
+}
+
+.top .tit {
+    font-size: 36rpx;
+    margin-bottom: 20rpx;
+}
+
+.top .btn,.top .tit {
+    position: relative;
+    z-index: 2;
+}
+
+.top .btn navigator {
+    background-color: #4cbdf1;
+    border-radius: 50rpx;
+    font-size: 24rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+}
+
+.left .top {
+    align-items: center;
+    background-color: #4c6ff1;
+    border-bottom: none;
+    border-right: none;
+    display: flex;
+    height: 230rpx;
+    justify-content: center;
+}
+
+.left .top image {
+    height: 64rpx;
+    width: 64rpx;
+}
+
+.cont .left {
+    top: 230rpx;
+}
+
+.cont .listr {
+    border-bottom: 1px solid #ececec;
+    border-right: 1px solid #ececec;
+    box-sizing: border-box;
+    height: 90rpx;
+    line-height: 90rpx;
+    padding: 0 10rpx;
+}
+
+.cont .icon-xing {
+    color: #f0910e;
+}
+
+.cont .num {
+    font-size: 24rpx;
+    margin-top: 15rpx;
+}
+
+.cont .need {
+    border: 1px solid #ff9400;
+    border-radius: 50rpx;
+    color: #ff9400;
+    display: inline-block;
+    font-size: 24rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    padding: 0 40rpx;
+    vertical-align: middle;
+}
+
+.cont .need.active {
+    background-color: #ff9400;
+    border-color: #fff;
+    color: #fff;
+}
+
+.cont .icon-xin {
+    font-size: 14px;
+}
+
+.cont .lk {
+    color: #4a6cf0;
+}
+
+.cont .lk,.cont .zx {
+    display: inline-block;
+    font-size: 24rpx;
+}
+
+.cont .zx {
+    background: none;
+    color: #ff9400;
+    line-height: normal;
+    padding: 0;
+    vertical-align: -3px;
+}
+
+.cont .zx,.cont .zx:after {
+    border: none;
+}
+
+.cont .icon-no,.cont .icon-yes {
+    font-size: 14px;
+    margin-right: 4px;
+    vertical-align: -1px;
+}
+
+.cont .icon-yes {
+    color: #73da73;
+}
+
+.cont .icon-no {
+    color: #da7773;
+}
+
+.cont .c1 {
+    color: #dd3635;
+}
+
+.cont .more {
+    border: 1px solid #476ecc;
+    border-radius: 30rpx;
+    color: #476ecc;
+    display: inline-block;
+    height: 40rpx;
+    line-height: 40rpx;
+    padding: 0 20rpx;
+    text-align: center;
+}
+
+.cont .more.bgc {
+    background-color: #476ecc;
+    color: #fff;
+}

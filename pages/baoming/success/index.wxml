@@ -1,0 +1,26 @@
+<view class="success">
+    <view class="top">
+        <icon color="#2b70ae" size="75" type="success"></icon>
+        <view class="txt">恭喜你，报名成功！</view>
+        <view class="tips">您填写的信息已提交，老师会在24小时内与您联系，</view>
+        <view class="tips">如有任何问题，请拨打电话<text bindtap="phone" class="c">4000052125</text>
+        </view>
+    </view>
+</view>
+<view class="cute bt10">
+    <view class="ctit">温馨提示</view>
+    <view class="ul">
+        <view class="li">
+            <text>一、</text>按报名表所列各项如实填写，方便审核</view>
+        <view class="li">
+            <text>二、</text>报名成功后，会出现报名成功页面</view>
+        <view class="li">
+            <text>三、</text>如有任何问题，请拨打电话<span bindtap="phonee" class="c1">4000052125</span>
+        </view>
+        <view class="li">
+            <text>四、</text>遇如遇到占线或无人接听，请填写报名表，我们会在第一时间与你联系</view>
+    </view>
+</view>
+<view class="backIndex">
+    <navigator openType="reLaunch" url="../../index/index">回到首页</navigator>
+</view>

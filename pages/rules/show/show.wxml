@@ -1,0 +1,68 @@
+<view class="introduce">
+    <view class="top">
+        <view class="img">
+            <image mode="aspectFit" src="https://www.125yan.com/Uploads/{{data.logo}}" wx:if="{{data.logo}}"></image>
+        </view>
+        <view class="title">{{data.title}}</view>
+        <view class="det">
+            <view>学费：<text>{{data.show_money}}</text>
+            </view>
+            <view>学制：<text>{{data.lenth}}</text>
+            </view>
+            <view class="show">方式： <view bindtap="bshow" class="tap" wx:if="{{index<1}}" wx:for="{{data.skfs}}" wx:key="bann">{{item}}<icon class="iconfont icon-jia" hidden="{{show==true}}"></icon>
+                </view>
+                <view class="hide {{bnohide==true?'nohide':''}}" hidden="{{show==true}}">
+                    <text wx:for="{{data.skfs}}" wx:key="ban">{{item}}</text>
+                </view>
+            </view>
+            <view class="show">地点： <view bindtap="dshow" class="tap" wx:if="{{index<1}}" wx:for="{{data.xxdq}}" wx:key="areaa">{{item}}<icon class="iconfont icon-jia" hidden="{{showw==true}}"></icon>
+                </view>
+                <view class="hide {{dnohide==true?'nohide':''}}" hidden="{{showw==true}}">
+                    <text wx:for="{{data.xxdq}}" wx:key="area">{{item}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="content">
+        <mp-html content="{{data.content}}" domain="https://www.125yan.com/" tagStyle="{{tagStyle}}"></mp-html>
+        <navigator class="bm" url="../../baoming/baoming?title={{data.title}}&typeid={{typeid}}&school={{school}}" wx:if="{{hasLogin}}">立即报名</navigator>
+        <button bindgetphonenumber="getPhoneNumber" class="bm" openType="getPhoneNumber" wx:else> 立即报名 </button>
+        <view class="btmopa">
+            <view bindtap="favorclick" class="likes" data-likes="{{likes}}">
+                <i class="iconfont icon-zan"></i>
+                <text>{{clicked==true?'已点赞':'点赞'}}({{likes==null?'0':likes}})</text>
+            </view>
+            <view bindtap="shoucang" class="likes">
+                <i class="iconfont icon-sc"></i>
+                <text>{{clickedd==true?'已收藏':'收藏'}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="bottomFixed">
+    <view class="left">
+        <button class="share" openType="share">
+            <i class="iconfont icon-fx"></i>
+            <text>分享</text>
+        </button>
+        <view bindtap="phone" class="phone">
+            <i class="iconfont icon-phone"></i>
+            <text>电话</text>
+        </view>
+    </view>
+    <view class="right">
+        <button class="online" openType="contact" sessionFrom="looyu">
+            <text>在线咨询</text>
+            <i class="iconfont icon-zixun"></i>
+        </button>
+        <navigator class="apply" url="../../baoming/baoming?title={{data.title}}&typeid={{typeid}}&school={{school}}" wx:if="{{hasLogin}}">
+            <text>在线报名</text>
+            <i class="iconfont icon-bm"></i>
+        </navigator>
+        <button bindgetphonenumber="getPhoneNumber" class="apply" openType="getPhoneNumber" wx:else>
+            <text>在线报名</text>
+            <i class="iconfont icon-bm"></i>
+        </button>
+    </view>
+</view>
+<view bindtap="goTop" class="backIndex" wx:if="{{gotop==true}}">返回顶部</view>

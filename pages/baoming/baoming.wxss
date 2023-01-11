@@ -1,0 +1,380 @@
+.bm {
+    font-size: 28rpx;
+    padding: 30rpx;
+}
+
+.title {
+    color: #4c6ff1;
+    font-size: 36rpx;
+    text-align: center;
+}
+
+.list {
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    padding: 30rpx 0 10rpx;
+}
+
+.list.list0 {
+    border-bottom: none;
+    padding-top: 0;
+}
+
+.tit {
+    font-size: 32rpx;
+    line-height: 1.6;
+}
+
+.tit .iconfont {
+    color: #bfcdff;
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.tit text {
+    letter-spacing: 2em;
+}
+
+.con {
+    flex: 1;
+    position: relative;
+}
+
+.select {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.select view {
+    background-color: #e9f3ff;
+    border-radius: 4px;
+    color: #666;
+    font-size: 24rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    margin-left: 20rpx;
+    margin-top: 20rpx;
+    position: relative;
+    text-align: center;
+    width: 157rpx;
+}
+
+.select view.active {
+    background-color: #4c6ff1;
+    color: #fff;
+}
+
+.select view:nth-child(4n-3) {
+    margin-left: 0;
+}
+
+.select1 {
+    display: flex;
+    margin-left: 10rpx;
+}
+
+.select1 view {
+    border: 1px solid #c3c3c4;
+    border-radius: 3px;
+    color: #666;
+    font-size: 24rpx;
+    height: 45rpx;
+    line-height: 45rpx;
+    margin-right: 20rpx;
+    position: relative;
+    text-align: center;
+    width: 95rpx;
+}
+
+.select1 view.active {
+    border-color: #4c6ff1;
+    color: #4c6ff1;
+}
+
+.select1 view.active:after {
+    border-bottom: 15rpx solid #4c6ff1;
+    border-left: 15rpx solid transparent;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    right: 0;
+}
+
+.input {
+    background: transparent;
+    color: #666;
+    font-size: 28rpx;
+    margin-top: 4px;
+    padding-left: 10rpx;
+    position: relative;
+    z-index: 2;
+}
+
+.holder {
+    color: #ccc;
+    font-size: 24rpx;
+}
+
+.textarea {
+    border: 1px solid #dadada;
+    box-sizing: border-box;
+    color: #666;
+    font-size: 26rpx;
+    height: 88rpx;
+    padding-left: 10rpx;
+    padding-top: 10rpx;
+    width: 100%;
+}
+
+.textarea,.tips {
+    border-radius: 3px;
+}
+
+.tips {
+    background-color: #fff;
+    display: none;
+    height: 56rpx;
+    line-height: 56rpx;
+    padding-left: 8rpx;
+    padding-right: 20rpx;
+    position: absolute;
+    right: 2rpx;
+    top: 1rpx;
+    z-index: 3;
+}
+
+.warn .tips {
+    display: block;
+}
+
+.warn .words {
+    color: #dd3635;
+    font-size: 24rpx;
+}
+
+.tips icon {
+    height: 26rpx;
+    margin-right: 6rpx;
+    vertical-align: -2px;
+}
+
+.chose {
+    position: relative;
+}
+
+.chose:after {
+    border-left: 1rpx solid #999;
+    border-top: 1rpx solid #999;
+    content: "";
+    height: 14rpx;
+    margin-right: 20rpx;
+    margin-top: -10rpx;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: rotate(135deg);
+    width: 14rpx;
+    z-index: 6;
+}
+
+.subbtn {
+    background: #4c6ff1!important;
+    border-radius: 90px;
+    color: #fff;
+    font-size: 36rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    margin-top: 40rpx;
+    text-align: center;
+}
+
+.subbtn.button-hover {
+    background: #4c6ff1;
+}
+
+.agree {
+    color: #dfdfdf;
+    font-size: 24rpx;
+    margin-top: 20rpx;
+    text-align: center;
+}
+
+.agree checkbox .wx-checkbox-input {
+    border-color: #f1f1f1;
+    height: 20rpx;
+    width: 20rpx;
+}
+
+.agree checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+    color: #ececec;
+    font-size: 24rpx;
+    height: 14rpx;
+    line-height: 14rpx;
+    margin-left: -2px;
+    text-align: center;
+    width: 14rpx;
+}
+
+.agree checkbox-group {
+    display: inline;
+}
+
+.cute {
+    padding: 30rpx;
+}
+
+.cute .ctit {
+    font-size: 32rpx;
+    padding-bottom: 20rpx;
+}
+
+.ul view {
+    color: #666;
+    font-size: 28rpx;
+    margin-top: 10rpx;
+    padding-left: 55rpx;
+    position: relative;
+}
+
+.ul view text {
+    left: 0;
+    position: absolute;
+}
+
+.ul view .c1 {
+    color: #4c6ff1;
+}
+
+.noscroll {
+    overflow: hidden;
+}
+
+.bg,.noscroll {
+    position: fixed;
+    width: 100%;
+}
+
+.bg {
+    background: rgba(0,0,0,.6);
+    display: none;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 4;
+}
+
+.bg.show {
+    display: block;
+}
+
+.pop {
+    background-color: #fff;
+    bottom: -500rpx;
+    box-sizing: border-box;
+    height: 500rpx;
+    left: 0;
+    padding: 0 30rpx;
+    position: fixed;
+    transition: bottom .4s;
+    width: 100%;
+    z-index: 5;
+}
+
+.pop.show {
+    bottom: 0;
+}
+
+.chtit {
+    color: #333;
+    padding-left: 20rpx;
+}
+
+.chli,.chtit {
+    font-size: 30rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.chli {
+    border-top: 1px solid #ebebeb;
+    padding-left: 30rpx;
+    position: relative;
+}
+
+.chli.active {
+    color: #4c6ff1;
+}
+
+.chli.active:before {
+    border-left: 1rpx solid #4c6ff1;
+    border-top: 1rpx solid #4c6ff1;
+    content: "";
+    height: 14rpx;
+    left: 0;
+    margin-right: 20rpx;
+    margin-top: -7rpx;
+    position: absolute;
+    top: 50%;
+    transform: rotate(135deg);
+    width: 14rpx;
+    z-index: 6;
+}
+
+.agreement {
+    left: 10%;
+    position: fixed;
+    top: 10vh;
+    transform: scale(0);
+    transition: transform .3s;
+    transition: transform .3s,-webkit-transform .3s;
+    width: 600rpx;
+    z-index: 66;
+}
+
+.agreement.show {
+    transform: scale(1);
+}
+
+.agreement .atit {
+    background-color: #ededed;
+    color: #555;
+    font-size: 32rpx;
+    line-height: 80rpx;
+    padding-left: 25px;
+}
+
+.agreement .close {
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 20px;
+}
+
+.agreement .close:after,.agreement .close:before {
+    background: #666;
+    content: "";
+    height: 1px;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 20px;
+}
+
+.agreement .close:before {
+    transform: rotate(45deg);
+}
+
+.agreement .close:after {
+    transform: rotate(135deg);
+}
+
+.agreement .cont {
+    background-color: #fff;
+    max-height: 60vh;
+    overflow: auto;
+    padding: 30rpx;
+    width: 540rpx;
+}

@@ -1,0 +1,12 @@
+<view class="top p10">
+    <navigator url="../showContent/index?catid=92&id=73">
+        <image src="/images/ways.png"></image>
+    </navigator>
+</view>
+<view class="cont clearfix p10">
+    <navigator class="list" url="../major/major?typeid={{item.id}}" wx:for="{{wayList}}" wx:key="way">
+        <image class="img" src="/images/{{item.img}}.png"></image>
+        <view class="tit">{{item.name}}</view>
+        <view class="sub">专业库</view>
+    </navigator>
+</view>

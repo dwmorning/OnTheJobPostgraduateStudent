@@ -1,0 +1,74 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/xuexiao/xuexiao",
+        "pages/school/school",
+        "pages/school/showMajor/index",
+        "pages/school/showIndex/index",
+        "pages/school/show/index",
+        "pages/jianzhang/jianzhang",
+        "pages/baoming/success/index",
+        "pages/baoming/baoming",
+        "pages/zzbs/zzbs",
+        "pages/gdkc/gdkc",
+        "pages/rules/show/show",
+        "pages/showContent/index",
+        "pages/zzss/zzss",
+        "pages/zhuanye/zhuanye",
+        "pages/type/showMajor/showMajor",
+        "pages/type/kaoshi/kaoshi",
+        "pages/type/zixun/zixun",
+        "pages/major/major",
+        "pages/type/show/show",
+        "pages/schoolMajor/schoolMajor",
+        "pages/rulesMajor/rulesMajor",
+        "pages/rules/rules",
+        "pages/type/gdpx/gdpx",
+        "pages/zixun/zixun",
+        "pages/wenda/wenda",
+        "pages/zhuanti/zhuanti",
+        "pages/user/loginOut/loginOut",
+        "pages/user/user",
+        "pages/collect/collect"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#ffffff",
+        "enablePullDownRefresh": false,
+        "onReachBottomDistance": 100,
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "第二学位学士"
+    },
+    "tabBar": {
+        "color": "#333333",
+        "selectedColor": "#2f70ab",
+        "borderStyle": "white",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "images/index.png",
+                "selectedIconPath": "images/index1.png"
+            },
+            {
+                "pagePath": "pages/jianzhang/jianzhang",
+                "text": "简章",
+                "iconPath": "images/jz.png",
+                "selectedIconPath": "images/jz1.png"
+            },
+            {
+                "pagePath": "pages/zixun/zixun",
+                "text": "资讯",
+                "iconPath": "images/news.png",
+                "selectedIconPath": "images/news1.png"
+            },
+            {
+                "pagePath": "pages/user/user",
+                "text": "我的",
+                "iconPath": "images/zixun.png",
+                "selectedIconPath": "images/zixun1.png"
+            }
+        ]
+    }
+}

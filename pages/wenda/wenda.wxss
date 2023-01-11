@@ -1,0 +1,85 @@
+.wdForm,.wdForm textarea {
+    margin-bottom: 20rpx;
+}
+
+.wdForm textarea {
+    border: 1px solid #2047d6;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 120rpx;
+    padding: 20rpx 30rpx;
+    width: 100%;
+}
+
+.wdForm .num {
+    color: #999;
+    font-size: 24rpx;
+    letter-spacing: 2px;
+}
+
+.wdForm .btn {
+    background-color: #ff8e02;
+    border: none;
+    border-radius: 50rpx;
+    color: #fff;
+    font-size: 24rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    padding: 0 20px;
+}
+
+.list {
+    border-bottom: 1px solid #ebebeb;
+    padding: 20rpx 0;
+}
+
+.list.show .icon-more {
+    transform: rotate(-90deg);
+}
+
+.list.show .cont {
+    display: block;
+}
+
+.list .iconfont {
+    font-size: 34rpx;
+    position: absolute;
+}
+
+.list .tit {
+    color: #000;
+    font-size: 32rpx;
+    margin-bottom: 10rpx;
+    padding-right: 50rpx;
+}
+
+.list .cont,.list .tit {
+    padding-left: 50rpx;
+    position: relative;
+}
+
+.list .cont {
+    display: none;
+    font-size: 28rpx;
+}
+
+.list .icon-more {
+    color: #4c6ff1;
+    right: 0;
+    top: 0;
+    transform: rotate(90deg);
+}
+
+.list .icon-wen {
+    color: #2047d6;
+    left: 0;
+    margin-right: 4px;
+    top: -6px;
+}
+
+.list .icon-da {
+    color: #ff8e02;
+    left: 0;
+    margin-right: 4px;
+    top: -7px;
+}

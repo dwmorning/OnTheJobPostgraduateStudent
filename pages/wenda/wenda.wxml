@@ -1,0 +1,22 @@
+<view class="wdForm p10">
+    <form bindsubmit="bindFormSubmit">
+        <textarea bindinput="sumInput" maxlength="200" name="textarea" placeholder="请输入您的问题" value="{{wdPlace}}"></textarea>
+        <view class="clearfix">
+            <view class="num fl">{{sum}}/200</view>
+            <button class="btn fr" formType="submit"> 提交 </button>
+        </view>
+    </form>
+</view>
+<view class="wdList p10">
+    <view class="list {{item.state==1?'show':''}}" wx:for="{{wdList}}" wx:key="wd">
+        <view catchtap="showCont" class="tit" data-index="{{index}}">
+            <icon class="iconfont icon-wen"></icon>{{item.title}}<i class="iconfont icon-more"></i>
+        </view>
+        <view class="cont">
+            <icon class="iconfont icon-da"></icon>{{item.description}}</view>
+    </view>
+</view>
+<view class="nocontent" hidden="{{gobottom==true}}">已经到底了!</view>
+<view class="nocontent" hidden="{{loding==true}}">
+    <image class="loading" src="/images/load.gif"></image>
+</view>

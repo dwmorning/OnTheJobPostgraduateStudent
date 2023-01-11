@@ -1,0 +1,100 @@
+.top image {
+    height: 160rpx;
+    margin-top: 30rpx;
+    width: 100%;
+}
+
+.main view {
+    margin-left: 30rpx;
+    margin-top: 24rpx;
+    width: 210rpx;
+}
+
+.main view:first-child {
+    margin-left: 0;
+}
+
+.main view image {
+    height: 160rpx;
+    width: 100%;
+}
+
+.link button,.link navigator {
+    align-items: center;
+    background-color: #edf3ff;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: flex;
+    float: left;
+    font-size: 28rpx;
+    height: 100rpx;
+    justify-content: space-between;
+    margin-right: 20rpx;
+    margin-top: 20rpx;
+    padding: 30rpx 20rpx;
+    text-align: left;
+    width: 335rpx;
+}
+
+.link button.none,.link navigator.none {
+    display: none;
+}
+
+.link button:nth-child(2n),.link navigator:nth-child(2n) {
+    margin-right: 0;
+}
+
+.link button:after {
+    content: normal;
+}
+
+.link button text {
+    font-size: 28rpx;
+    line-height: normal;
+}
+
+.link .iconfont {
+    color: #a4c3fe;
+    font-size: 18px;
+}
+
+.wrap {
+    margin-top: 40rpx;
+}
+
+.wrapList .list {
+    border-bottom: 1rpx solid #eee;
+    padding: 30rpx 0;
+}
+
+.wrapList .tit {
+    font-size: 32rpx;
+    font-weight: 700;
+    margin-bottom: 10rpx;
+}
+
+.wrapList .cont {
+    display: flex;
+}
+
+.wrapList .img {
+    border-radius: 3px;
+    height: 120rpx;
+    margin-right: 30rpx;
+    width: 220rpx;
+}
+
+.wrapList .info {
+    flex: 1;
+}
+
+.wrapList .info view {
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: #666;
+    display: -webkit-box;
+    font-size: 28rpx;
+    overflow: hidden;
+    text-overflow: -o-ellipsis-lastline;
+    text-overflow: ellipsis;
+}

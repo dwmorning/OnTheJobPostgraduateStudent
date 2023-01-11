@@ -1,0 +1,199 @@
+.tabTit {
+    align-items: center;
+    background: #fff;
+    box-shadow: 0 0 20px #ddd;
+    color: #333;
+    display: flex;
+    font-size: 28rpx;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.tabTit,.tabTit .flex1 {
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+}
+
+.tabTit .flex1 {
+    flex: 1;
+    overflow: hidden;
+    padding: 0 15px 0 5px;
+    position: relative;
+}
+
+.tabIcon {
+    border-left: 10rpx solid transparent;
+    border-right: 10rpx solid transparent;
+    border-top: 10rpx solid #c9c9c9;
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: 2px;
+}
+
+.tabTit .active {
+    color: #4c6ff1;
+}
+
+.tabTit .active .tabIcon {
+    border-top-color: #4c6ff1;
+    transform: rotate(180deg);
+}
+
+.tabContent {
+    position: relative;
+}
+
+.tabLayer {
+    background: #fff;
+    border-top: 1px solid #eee;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 750rpx;
+}
+
+.mask,.tabLayer {
+    position: fixed;
+    top: 100rpx;
+    z-index: 2;
+}
+
+.mask {
+    background: rgba(0,0,0,.5);
+    height: 100%;
+    width: 100%;
+}
+
+.tabLayer1 {
+    background-color: #f3f3f3;
+    padding-bottom: 20rpx;
+}
+
+.tabLayer1 view {
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #666;
+    float: left;
+    font-size: 24rpx;
+    height: 55rpx;
+    line-height: 55rpx;
+    margin-left: 20rpx;
+    margin-top: 20rpx;
+    position: relative;
+    text-align: center;
+    width: 157rpx;
+}
+
+.tabLayer1 view:nth-child(4n-3) {
+    margin-left: 0;
+}
+
+.tabLayer1.tabLayer2 view {
+    width: 122rpx;
+}
+
+.tabLayer1.tabLayer2 view:nth-child(4n-3) {
+    margin-left: 20rpx;
+}
+
+.tabLayer1.tabLayer2 view:nth-child(5n-4) {
+    margin-left: 0;
+}
+
+.tabLayer view.active {
+    background-color: #dee5ff;
+    border-color: #4c6ff1;
+    color: #4c6ff1;
+}
+
+.schCont {
+    margin-top: 100rpx;
+}
+
+.schCont .list {
+    border-bottom: 1px solid #ebebeb;
+    display: flex;
+    justify-content: space-between;
+    padding: 25rpx 0;
+    position: relative;
+}
+
+.schCont .list::after {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #829bf5;
+    content: "\e605";
+    font-family: iconfont!important;
+    font-size: 16px;
+    font-size: 50rpx;
+    font-style: normal;
+    margin-top: -25rpx;
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+
+.schCont .left {
+    margin-right: 30rpx;
+    width: 100rpx;
+}
+
+.schCont .left image {
+    height: 100rpx;
+    width: 100rpx;
+}
+
+.schCont .right {
+    width: 560rpx;
+}
+
+.schCont .tit {
+    font-size: 36rpx;
+}
+
+.schCont .tag {
+    display: none;
+}
+
+.schCont .tag2,.schCont .tag3 {
+    border: 1px solid #ddd;
+    border-radius: 30rpx;
+    font-size: 24rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    margin-left: 10rpx;
+    padding: 0 10rpx;
+    vertical-align: 3px;
+}
+
+.schCont .tag2 {
+    border-color: #4c6ff1;
+    color: #4c6ff1;
+}
+
+.schCont .tag3 {
+    border-color: #ff9400;
+    color: #ff9400;
+}
+
+.schCont .tag2:before {
+    content: "211";
+}
+
+.schCont .tag3:before {
+    content: "985";
+}
+
+.schCont .sub {
+    color: #666;
+    font-size: 24rpx;
+    margin-top: 14rpx;
+}
+
+.schCont .sub text {
+    color: #4c6ff1;
+}

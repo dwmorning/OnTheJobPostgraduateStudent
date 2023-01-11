@@ -1,0 +1,174 @@
+<form catchsubmit="formSubmit">
+    <view class="bm">
+        <view class="title">请选择报考类型</view>
+        <view class="list list0">
+            <view class="con select">
+                <view bindtap="typeChose" class="{{typeid==item.id?'active':''}}" data-id="{{item.id}}" data-txt="{{item.name}}" data-typeid="{{item.id}}" wx:for="{{typeList}}" wx:key="type">{{item.name}}</view>
+            </view>
+        </view>
+        <view class="list">
+            <view class="tit">
+                <i class="iconfont icon-yxxx"></i>意向学校：</view>
+            <view class="con {{xxStatus==true?'warn':''}}">
+                <input bindinput="xxInt" class="input" confirmType="next" name="xx" placeholder="请输入意向学校" placeholderClass="holder" type="text" value="{{school}}"></input>
+                <view class="tips">
+                    <icon color="#dd3635" size="13" type="warn"></icon>
+                    <text class="words">{{xxTips}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="list">
+            <view class="tit">
+                <i class="iconfont icon-yxzy"></i>意向专业：</view>
+            <view class="con {{zyStatus==true?'warn':''}}">
+                <input bindinput="zyInt" class="input" confirmType="next" name="zy" placeholder="请输入意向专业" placeholderClass="holder" type="text" value="{{title}}"></input>
+                <view class="tips">
+                    <icon color="#dd3635" size="13" type="warn"></icon>
+                    <text class="words">{{zyTips}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="list">
+            <view class="tit">
+                <i class="iconfont icon-zsxm"></i>真实姓名：</view>
+            <view class="con {{xmStatus==true?'warn':''}}">
+                <input bindinput="xmInt" class="input" confirmType="next" name="xm" placeholder="请输入姓名" placeholderClass="holder" type="text"></input>
+                <view class="tips">
+                    <icon color="#dd3635" size="13" type="warn"></icon>
+                    <text class="words">{{xmTips}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="list">
+            <view class="tit">
+                <i class="iconfont icon-xingbie"></i>
+                <text>性</text>别：</view>
+            <view class="con select1">
+                <view bindtap="sexChose" class="{{sexid=='1'?'active':''}}" data-sex="1">男</view>
+                <view bindtap="sexChose" class="{{sexid=='2'?'active':''}}" data-sex="2">女</view>
+            </view>
+        </view>
+        <view class="list">
+            <view class="tit">
+                <i class="iconfont icon-csrq"></i>出生日期：</view>
+            <view class="con {{rqStatus==true?'warn':''}}">
+                <picker bindchange="birthdayChange" end="2019-01-01" mode="date" start="1970-01-01" value="1995-01-01">
+                    <view class="picker">
+                        <input bindinput="rqInt" class="input chose" confirmType="next" disabled="true" mode="time" name="rq" placeholder="请选择日期" placeholderClass="holder" type="text" value="{{birthday}}"></input>
+                    </view>
+                </picker>
+                <view class="tips">
+                    <icon color="#dd3635" size="13" type="warn"></icon>
+                    <text class="words">{{rqTips}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="list">
+            <view class="tit">
+                <i class="iconfont icon-ydsj"></i>移动电话：</view>
+            <view class="con {{dhStatus==true?'warn':''}}">
+                <input bindinput="dhInt" class="input" confirmType="next" name="dh" placeholder="请输入联系方式" placeholderClass="holder" type="text"></input>
+                <view class="tips">
+                    <icon color="#dd3635" size="13" type="warn"></icon>
+                    <text class="words">{{dhTips}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="list">
+            <view class="tit">
+                <i class="iconfont icon-email"></i>电子邮箱：</view>
+            <view class="con {{yxStatus==true?'warn':''}}">
+                <input bindinput="yxInt" class="input" confirmType="next" name="yx" placeholder="请输入电子邮箱" placeholderClass="holder" type="text"></input>
+                <view class="tips">
+                    <icon color="#dd3635" size="13" type="warn"></icon>
+                    <text class="words">{{yxTips}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="list">
+            <view class="tit">
+                <i class="iconfont icon-zgxl"></i>最高学历：</view>
+            <view bindtap="choseXl" class="con {{xlStatus==true?'warn':''}}">
+                <input bindinput="xlInt" class="input chose" confirmType="next" disabled="true" name="xl" placeholder="请选择最高学历" placeholderClass="holder" type="text" value="{{xuelitxt}}"></input>
+                <view class="tips">
+                    <icon color="#dd3635" size="13" type="warn"></icon>
+                    <text class="words">{{xlTips}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="list">
+            <view class="tit">
+                <i class="iconfont icon-bysj"></i>毕业时间：</view>
+            <view bindtap="choseSj" class="con {{byStatus==true?'warn':''}}">
+                <input bindinput="byInt" class="input chose" confirmType="next" disabled="true" name="by" placeholder="请选择时间" placeholderClass="holder" type="text" value="{{timetxt}}"></input>
+                <view class="tips">
+                    <icon color="#dd3635" size="13" type="warn"></icon>
+                    <text class="words">{{byTips}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="list">
+            <view class="tit">
+                <i class="iconfont icon-szcs"></i>所在城市：</view>
+            <view class="con {{csStatus==true?'warn':''}}">
+                <picker bindchange="picker" bindcolumnchange="columnPicker" mode="multiSelector" range="{{multiArray}}" value="{{value}}">
+                    <view class="picker">
+                        <input class="input chose" disabled="true" name="cs" placeholder="请选择城市" placeholderClass="holder" type="text" value="{{text}}"></input>
+                    </view>
+                    <view class="tips">
+                        <icon color="#dd3635" size="13" type="warn"></icon>
+                        <text class="words">{{csTips}}</text>
+                    </view>
+                </picker>
+            </view>
+        </view>
+        <view class="list">
+            <view class="tit">
+                <i class="iconfont icon-sq"></i>
+                <text>备</text>注：</view>
+            <view class="con">
+                <input class="input" confirmType="next" name="bz" placeholder="请输入备注" placeholderClass="holder" type="text"></input>
+            </view>
+        </view>
+        <button class="subbtn" formType="submit" type="primary">提 交</button>
+        <view class="agree">
+            <checkbox-group bindchange="chk">
+                <label class="checkbox">
+                    <checkbox checked="true" value="{{agreeChk}}"></checkbox>
+                </label>
+            </checkbox-group>
+            <text bindtap="showAgree">同意《个人信息保护声明》</text>
+        </view>
+    </view>
+</form>
+<view class="cute bt10">
+    <view class="ctit">温馨提示</view>
+    <view class="ul">
+        <view>
+            <text>一、</text>按报名表所列各项如实填写，方便审核</view>
+        <view>
+            <text>二、</text>报名成功后，会出现报名成功页面。</view>
+        <view>
+            <text>三、</text>如有任何问题，请拨打电话<span bindtap="phone" class="c1">4000052125</span>
+        </view>
+        <view>
+            <text>四、</text>遇到占线或无人接听，请填写报名表，我们会在第一时间与您联系。</view>
+    </view>
+</view>
+<view bindtap="hidepop" catchtouchmove="preventTouchMove" class="bg {{bg==true?'show':''}}"></view>
+<scroll-view scrollY catchtouchmove="preventTouchMove" class="pop {{xueli==true?'show':''}}">
+    <view class="chtit">请选择学历</view>
+    <view bindtap="xueli" class="chli {{xueliid==index?'active':''}}" data-id="{{index}}" data-txt="{{item.name}}" wx:for="{{xueliList}}" wx:key="xueli">{{item.name}}</view>
+</scroll-view>
+<scroll-view scrollY catchtouchmove="preventTouchMove" class="pop {{time==true?'show':''}}">
+    <view class="chtit">请选择毕业时间</view>
+    <view bindtap="time" class="chli {{timeid==index?'active':''}}" data-id="{{index}}" data-txt="{{item}}" wx:for="{{timeList}}" wx:key="time">{{item}}</view>
+</scroll-view>
+<import src="../../wxParse/wxParse.wxml"></import>
+<view class="agreement {{agreeS==true?'show':''}}">
+    <view class="atit">个人信息保护声明</view>
+    <view bindtap="hideAgree" class="close"></view>
+    <scroll-view scrollY catchtouchmove="preventTouchMove" class="cont">
+        <template is="wxParse" data="{{wxParseData:agree.nodes}}"></template>
+    </scroll-view>
+</view>

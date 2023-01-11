@@ -1,0 +1,45 @@
+<view class="userTop p10">
+    <view class="userBg">
+        <view class="infomation" wx:if="{{hasUserPhone}}">
+            <image class="header" mode="cover" src="https://www.125yan.com/Uploads/Images/User/default_face.png"></image>
+            <button bindgetphonenumber="getPhoneNumber" class="loginBtn" openType="getPhoneNumber">授权登录</button>
+        </view>
+        <navigator class="infomation" url="../user/loginOut/loginOut" wx:else>
+            <image class="header" mode="cover" src="https://www.125yan.com/Uploads/{{avatarUrl}}" wx:if="{{avatarUrl}}"></image>
+            <view class="usrinfo">
+                <view class="name">{{nickname}}</view>
+                <view class="phone">{{phone}}</view>
+            </view>
+        </navigator>
+    </view>
+</view>
+<view class="item clearfix">
+    <view bindtap="phone" class="list">
+        <icon class="iconfont icon-phone"></icon>
+        <text>电话咨询</text>
+    </view>
+    <button class="list" openType="contact" sessionFrom="looyu">
+        <icon class="iconfont icon-zixun"></icon>
+        <text>联系客服</text>
+    </button>
+    <button class="list" openType="share">
+        <icon class="iconfont icon-fx"></icon>
+        <text>分享转发</text>
+    </button>
+    <navigator class="list" url="../baoming/baoming?title=&typeid=1&school=" wx:if="{{!hasUserPhone}}">
+        <icon class="iconfont icon-bm"></icon>
+        <text>在线报名</text>
+    </navigator>
+    <button bindgetphonenumber="getPhoneNumberr" class="list" openType="getPhoneNumber" wx:else>
+        <icon class="iconfont icon-bm"></icon>
+        <text>在线报名</text>
+    </button>
+    <navigator class="list" url="../collect/collect">
+        <icon class="iconfont icon-sc"></icon>
+        <text>我的收藏</text>
+    </navigator>
+</view>
+<button class="kefu" openType="contact" sessionFrom="looyu">
+    <image class="kefu-img" mode="" src="/images/kf.png"></image>
+    <text class="kefu-txt">咨询</text>
+</button>

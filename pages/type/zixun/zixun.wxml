@@ -1,0 +1,23 @@
+<view class="title flex">
+    <view bindtap="titlist" class="{{catid==item.id?'active':''}}" data-id="{{item.id}}" wx:for="{{titList}}" wx:key="tit">{{item.title}}</view>
+</view>
+<view class="content p10">
+    <navigator url="../../showContent/index?catid={{item.catid}}&id={{item.id}}" wx:for="{{zixunList}}" wx:key="zixun">
+        <view class="item">
+            <image class="img" src="https://www.125yan.com/Uploads/{{item.thumb}}" wx:if="{{item.thumb!==''}}"></image>
+            <view class="info">
+                <view class="tit">{{item.title}}</view>
+                <view class="det">{{item.description}}</view>
+                <view class="sub">
+                    <view>{{item.inputtime}}</view>
+                    <view>
+                        <i class="iconfont icon-see"></i>{{item.hits_num==null?'0':item.hits_num}}</view>
+                </view>
+            </view>
+        </view>
+    </navigator>
+</view>
+<view class="nocontent" hidden="{{gobottom==true}}">已经到底了!</view>
+<view class="nocontent" hidden="{{loding==true}}">
+    <image class="loading" src="/images/load.gif"></image>
+</view>

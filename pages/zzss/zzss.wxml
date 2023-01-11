@@ -1,0 +1,335 @@
+<view class="dbTab">
+    <view class="left">
+        <view bindtap="scrollLeft" class="top">
+            <image src="/images/scr.png"></image>
+        </view>
+        <view>难易程度</view>
+        <view class="list1">关注度</view>
+        <view class="list2">入学方式</view>
+        <view class="list3">报名时间</view>
+        <view class="list4">报名条件</view>
+        <view>学习时长</view>
+        <view class="list2">学习方式</view>
+        <view>获得证书</view>
+        <view>考试时间</view>
+        <view>考试类型</view>
+        <view>学习费用</view>
+        <view class="list4">热门院校</view>
+        <view class="list4">热门专业</view>
+        <view>频道入口</view>
+    </view>
+    <scroll-view scrollWithAnimation scrollX class="scroll" scrollLeft="{{scrollLeft}}">
+        <view class="top">
+            <view class="list">
+                <view class="right">
+                    <view class="listr">
+                        <view class="way">途径<text>1</text>
+                        </view>
+                        <view class="tit">同等学力</view>
+                        <view class="btn">
+                            <navigator url="../type/show/show?typeid=1&majortxt=tdxl">进入同等学力</navigator>
+                        </view>
+                    </view>
+                    <view class="listr">
+                        <view class="way">途径<text>2</text>
+                        </view>
+                        <view class="tit">非全日制</view>
+                        <view class="btn">
+                            <navigator url="../type/show/show?typeid=2&majortxt=zyss">进入非全日制</navigator>
+                        </view>
+                    </view>
+                    <view class="listr">
+                        <view class="way">途径<text>3</text>
+                        </view>
+                        <view class="tit">国际硕士</view>
+                        <view class="btn">
+                            <navigator url="../type/show/show?typeid=3&majortxt=gjss">进入国际硕士</navigator>
+                        </view>
+                    </view>
+                    <view class="listr">
+                        <view class="way">途径<text>4</text>
+                        </view>
+                        <view class="tit">中外合办</view>
+                        <view class="btn">
+                            <navigator url="../type/show/show?typeid=4&majortxt=zwhb">进入中外合办</navigator>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="cont">
+            <view class="list">
+                <view class="right">
+                    <view class="listr">
+                        <icon class="iconfont icon-xing"></icon>
+                        <icon class="iconfont icon-xing"></icon>
+                        <icon class="iconfont icon-xing"></icon>
+                    </view>
+                    <view class="listr">
+                        <icon class="iconfont icon-xing"></icon>
+                        <icon class="iconfont icon-xing"></icon>
+                        <icon class="iconfont icon-xing"></icon>
+                        <icon class="iconfont icon-xing"></icon>
+                    </view>
+                    <view class="listr">
+                        <icon class="iconfont icon-xing"></icon>
+                        <icon class="iconfont icon-xing"></icon>
+                        <icon class="iconfont icon-xing"></icon>
+                    </view>
+                    <view class="listr">
+                        <icon class="iconfont icon-xing"></icon>
+                        <icon class="iconfont icon-xing"></icon>
+                        <icon class="iconfont icon-xing"></icon>
+                    </view>
+                </view>
+            </view>
+            <view class="list list1">
+                <view class="right">
+                    <view class="listr">
+                        <view class="num">{{tdxl}}人浏览</view>
+                        <view bindtap="bm0" class="need {{bmid0==0?'active':''}}" data-id="0">
+                            <i class="iconfont icon-xin"></i>想报名</view>
+                    </view>
+                    <view class="listr">
+                        <view class="num">{{zyss}}人浏览</view>
+                        <view bindtap="bm1" class="need {{bmid1==1?'active':''}}" data-id="1">
+                            <i class="iconfont icon-xin"></i>想报名</view>
+                    </view>
+                    <view class="listr">
+                        <view class="num">{{gjss}}人浏览</view>
+                        <view bindtap="bm2" class="need {{bmid2==2?'active':''}}" data-id="2">
+                            <i class="iconfont icon-xin"></i>想报名</view>
+                    </view>
+                    <view class="listr">
+                        <view class="num">{{zwhb}}人浏览</view>
+                        <view bindtap="bm3" class="need {{bmid3==3?'active':''}}" data-id="3">
+                            <i class="iconfont icon-xin"></i>想报名</view>
+                    </view>
+                </view>
+            </view>
+            <view class="list list2">
+                <view class="right">
+                    <view class="listr">
+                        <text>先入学、后考试</text>
+                    </view>
+                    <view class="listr">
+                        <text>先考试、后入学 （预科班除外）</text>
+                    </view>
+                    <view class="listr">
+                        <text>免试入学 择优录取</text>
+                    </view>
+                    <view class="listr">
+                        <text>免试入学 择优录取</text>
+                    </view>
+                </view>
+            </view>
+            <view class="list list3">
+                <view class="right">
+                    <view class="listr">
+                        <view>招生院校根据课程自行安排，请查看<navigator class="lk" url="../rules/rules?typeid=1&schoolid=0&majorid=0">招生简章</navigator>或<button class="zx" openType="contact">咨询</button>
+                        </view>
+                    </view>
+                    <view class="listr">
+                        <text>9月下旬至10月31日（每年一次）</text>
+                    </view>
+                    <view class="listr">
+                        <view>招生院校根据课程自行安排，请查看<navigator class="lk" url="../rules/rules?typeid=3&schoolid=0&majorid=0">招生简章</navigator>或<button class="zx" openType="contact">咨询</button>
+                        </view>
+                    </view>
+                    <view class="listr">
+                        <view>招生院校根据课程自行安排，请查看<navigator class="lk" url="../rules/rules?typeid=4&schoolid=0&majorid=0">招生简章</navigator>或<button class="zx" openType="contact">咨询</button>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="list list4">
+                <view class="right">
+                    <view class="listr">
+                        <text>大专以上学历即可报读，若申请硕士学位则需要大学本科有学位，毕业满3年…</text>
+                    </view>
+                    <view class="listr">
+                        <text>大专毕业后，有五年或五年以上工作经历；本科毕业，有三年或三年以上工作经验…</text>
+                    </view>
+                    <view class="listr">
+                        <text>大专学历，有五年及以上管理工作经验；本科学历，有三年及以上管理工作经验…</text>
+                    </view>
+                    <view class="listr">
+                        <text>大专生，在读本科生，本科毕业生都可以免试入学，修满学分，考试合格，获得…</text>
+                    </view>
+                </view>
+            </view>
+            <view class="list">
+                <view class="right">
+                    <view class="listr">
+                        <text>2年</text>
+                    </view>
+                    <view class="listr">
+                        <text>2.5年</text>
+                    </view>
+                    <view class="listr">
+                        <text>2年</text>
+                    </view>
+                    <view class="listr">
+                        <text>2年</text>
+                    </view>
+                </view>
+            </view>
+            <view class="list list2">
+                <view class="right">
+                    <view class="listr">
+                        <text>周末班、集中班、远程班</text>
+                    </view>
+                    <view class="listr">
+                        <text>周末班、集中班、全日制</text>
+                    </view>
+                    <view class="listr">
+                        <text>周末班、集中班、远程班</text>
+                    </view>
+                    <view class="listr">
+                        <text>周末班、集中班、全日制</text>
+                    </view>
+                </view>
+            </view>
+            <view class="list">
+                <view class="right">
+                    <view class="listr">
+                        <view>学位证<icon class="iconfont icon-yes"></icon>学历证<icon class="iconfont icon-no"></icon>
+                        </view>
+                    </view>
+                    <view class="listr">
+                        <view>学位证<icon class="iconfont icon-yes"></icon>学历证<icon class="iconfont icon-yes"></icon>
+                        </view>
+                    </view>
+                    <view class="listr">
+                        <view>学位证<icon class="iconfont icon-yes"></icon>学历证<icon class="iconfont icon-no"></icon>
+                        </view>
+                    </view>
+                    <view class="listr">
+                        <view>学位证<icon class="iconfont icon-yes"></icon>学历证<icon class="iconfont icon-no"></icon>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="list">
+                <view class="right">
+                    <view class="listr">
+                        <text>每年的5月中旬</text>
+                    </view>
+                    <view class="listr">
+                        <text>每年的12月末</text>
+                    </view>
+                    <view class="listr">
+                        <text>院校自主安排</text>
+                    </view>
+                    <view class="listr">
+                        <text>院校自主安排</text>
+                    </view>
+                </view>
+            </view>
+            <view class="list">
+                <view class="right">
+                    <view class="listr">
+                        <text>同等学力申硕考试</text>
+                    </view>
+                    <view class="listr">
+                        <text>非全日制联考</text>
+                    </view>
+                    <view class="listr">
+                        <text>院校自行命题</text>
+                    </view>
+                    <view class="listr">
+                        <text>院校自行命题</text>
+                    </view>
+                </view>
+            </view>
+            <view class="list">
+                <view class="right c1">
+                    <view class="listr">
+                        <text>1.2万~5.7万</text>
+                    </view>
+                    <view class="listr">
+                        <text>1.8万~26万</text>
+                    </view>
+                    <view class="listr">
+                        <text>5.9万~26万</text>
+                    </view>
+                    <view class="listr">
+                        <text>2.5万~52.2万</text>
+                    </view>
+                </view>
+            </view>
+            <view class="list list4">
+                <view class="right">
+                    <view class="listr">
+                        <view>
+                            <navigator url="../school/show/index?schoollid={{item.id}}&majortxt=tdxl&typeid=1" wx:for="{{schList0}}" wx:key="sch0">{{item.name}}</navigator>
+                            <navigator class="more" url="../school/school?majorid=0&schoolid=0&typeid=1&majortxt=tdxl">更多院校</navigator>
+                        </view>
+                    </view>
+                    <view class="listr">
+                        <view>
+                            <navigator url="../school/showMajor/index?schoollid={{item.id}}&majortxt=zyss&typeid=2" wx:for="{{schList1}}" wx:key="sch1">{{item.name}}</navigator>
+                            <navigator class="more" url="../school/school?majorid=0&schoolid=0&typeid=2&majortxt=zyss">更多院校</navigator>
+                        </view>
+                    </view>
+                    <view class="listr">
+                        <view>
+                            <navigator url="../school/show/index?schoollid={{item.id}}&majortxt=gjss&typeid=3" wx:for="{{schList2}}" wx:key="sch2">{{item.name}}</navigator>
+                            <navigator class="more" url="../school/school?majorid=0&schoolid=0&typeid=3&majortxt=gjss">更多院校</navigator>
+                        </view>
+                    </view>
+                    <view class="listr">
+                        <view>
+                            <navigator url="../school/show/index?schoollid={{item.id}}&majortxt=zwhb&typeid=4" wx:for="{{schList3}}" wx:key="sch3">{{item.name}}</navigator>
+                            <navigator class="more" url="../school/school?majorid=0&schoolid=0&typeid=4&majortxt=zwhb">更多院校</navigator>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="list list4">
+                <view class="right">
+                    <view class="listr">
+                        <view>
+                            <navigator url="../rules/rules?majorid={{item.id}}&schoolid=0&typeid=1" wx:for="{{majList0}}" wx:key="maj0">{{item.name}}</navigator>
+                            <navigator class="more" url="../major/major?majorid=0&schoolid=0&typeid=1&majortxt=tdxl">更多专业</navigator>
+                        </view>
+                    </view>
+                    <view class="listr">
+                        <view>
+                            <navigator url="../rulesMajor/rulesMajor?majorid={{item.id}}&typeid=2" wx:for="{{majList1}}" wx:key="maj1">{{item.name}}</navigator>
+                            <navigator class="more" url="../major/major?majorid=0&schoolid=0&typeid=2&majortxt=zyss">更多专业</navigator>
+                        </view>
+                    </view>
+                    <view class="listr">
+                        <view>
+                            <navigator url="../rules/rules?majorid={{item.id}}&schoolid=0&typeid=3" wx:for="{{majList2}}" wx:key="maj2">{{item.name}}</navigator>
+                            <navigator class="more" url="../major/major?majorid=0&schoolid=0&typeid=3&majortxt=gjss">更多专业</navigator>
+                        </view>
+                    </view>
+                    <view class="listr">
+                        <view>
+                            <navigator url="../rules/rules?majorid={{item.id}}&schoolid=0&typeid=4" wx:for="{{majList3}}" wx:key="maj3">{{item.name}}</navigator>
+                            <navigator class="more" url="../major/major?majorid=0&schoolid=0&typeid=4&majortxt=zwhb">更多专业</navigator>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="list">
+                <view class="right">
+                    <view class="listr">
+                        <navigator class="more bgc" url="../type/show/show?typeid=1&majortxt=tdxl">进入同等学力频道</navigator>
+                    </view>
+                    <view class="listr">
+                        <navigator class="more bgc" url="../type/show/show?typeid=2&majortxt=zyss">进入非全日制频道</navigator>
+                    </view>
+                    <view class="listr">
+                        <navigator class="more bgc" url="../type/show/show?typeid=3&majortxt=gjss">进入国际硕士频道</navigator>
+                    </view>
+                    <view class="listr">
+                        <navigator class="more bgc" url="../type/show/show?typeid=4&majortxt=zwhb">进入中外合办频道</navigator>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

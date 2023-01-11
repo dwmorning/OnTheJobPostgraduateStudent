@@ -1,0 +1,54 @@
+page {
+    background-color: #f3f3f3;
+}
+
+.top image {
+    height: 160rpx;
+    margin-top: 30rpx;
+    width: 100%;
+}
+
+.cont {
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 20rpx 30rpx;
+}
+
+.list {
+    align-items: center;
+    border-bottom: 1px solid #f3f3f3;
+    box-sizing: border-box;
+    display: flex;
+    padding: 35rpx;
+    position: relative;
+}
+
+.list::after {
+    border-right: 2px solid #ccc;
+    border-top: 2px solid #ccc;
+    content: "";
+    height: 24rpx;
+    margin-top: -12rpx;
+    position: absolute;
+    right: 32rpx;
+    top: 50%;
+    transform: rotate(45deg);
+    width: 24rpx;
+}
+
+.tit {
+    font-size: 32rpx;
+    font-weight: 700;
+}
+
+.sub {
+    color: #999;
+    font-size: 24rpx;
+    margin-top: 2px;
+}
+
+.img {
+    height: 48rpx;
+    margin-right: 25rpx;
+    width: 48rpx;
+}

@@ -1,0 +1,275 @@
+.tabTit {
+    align-items: center;
+    background: #fff;
+    box-shadow: 0 0 20px #ddd;
+    color: #333;
+    display: flex;
+    font-size: 28rpx;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.tabTit,.tabTit .flex1 {
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+.tabTit .flex1 {
+    flex: 22.5% 0 1;
+    overflow: hidden;
+    padding: 0 15px 0 5px;
+    position: relative;
+    text-align: right;
+}
+
+.tabTit .flex1:last-child {
+    flex: 10% 0 1;
+}
+
+.tabTit .flex1:last-child .tabIcon {
+    border: none;
+    position: static;
+    vertical-align: -2px;
+}
+
+.tabTit .flex1:last-child .tabIcon::after {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e603";
+    font-family: iconfont!important;
+    font-size: 16px;
+    font-style: normal;
+}
+
+.tabIcon {
+    border-left: 10rpx solid transparent;
+    border-right: 10rpx solid transparent;
+    border-top: 10rpx solid #c9c9c9;
+    display: inline-block;
+    margin-left: 5px;
+    margin-top: -5rpx;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    vertical-align: 2px;
+}
+
+.tabTit .active {
+    color: #4c6ff1;
+}
+
+.tabTit .active .tabIcon {
+    border-top-color: #4c6ff1;
+    transform: rotate(180deg);
+}
+
+.tabTit .flex1.active:last-child .tabIcon {
+    transform: rotate(0);
+}
+
+.tabContent {
+    position: relative;
+}
+
+.tabLayer {
+    background: #fff;
+    border-top: 1px solid #eee;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 750rpx;
+}
+
+.mask,.tabLayer {
+    position: fixed;
+    top: 100rpx;
+    z-index: 2;
+}
+
+.mask {
+    background: rgba(0,0,0,.5);
+    height: 100%;
+    width: 100%;
+}
+
+.noLimit {
+    padding: 0 30rpx;
+}
+
+.noLimit,.tabLayer1 .list view {
+    color: #666;
+    font-size: 28rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    position: relative;
+}
+
+.tabLayer1 .list view {
+    border-bottom: 1px solid #ccc;
+}
+
+.tabLayer1 .list view:last-child {
+    border-bottom: none;
+}
+
+.tabLayer1 .title {
+    background-color: #efefef;
+    color: #666;
+    font-size: 32rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    padding: 0 30rpx;
+}
+
+.tabLayer view.active {
+    color: #4c6ff1;
+}
+
+.noLimit.active:after,.tabLayer1 .list .active:after,.tabLayer2 .right view.active:after,.tabLayer4 view.active:after {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e618";
+    font-family: iconfont!important;
+    font-size: 20px;
+    font-style: normal;
+    position: absolute;
+    right: 30rpx;
+}
+
+.tabLayer2 {
+    position: relative;
+}
+
+.tabLayer2.show .left {
+    width: 260rpx;
+}
+
+.tabLayer2.show .right {
+    transform: translateX(0);
+}
+
+.tabLayer2 .left {
+    background-color: #efefef;
+    overflow: scroll;
+    text-align: center;
+}
+
+.tabLayer2 .left view {
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.tabLayer2 .right {
+    box-sizing: border-box;
+    left: 260rpx;
+    padding: 0 30rpx;
+    position: absolute;
+    top: 0;
+    transform: translateX(100%);
+    transition: transform .2s;
+    transition: transform .2s,-webkit-transform .2s;
+    width: 490rpx;
+}
+
+.tabLayer2 .right view {
+    border-bottom: 1px solid #ccc;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.tabLayer3 {
+    padding-bottom: 20rpx;
+}
+
+.tabLayer3 text {
+    background-color: #f3f3f3;
+    border: 1px solid #f3f3f3;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #666;
+    display: inline-block;
+    height: 66rpx;
+    line-height: 64rpx;
+    margin: 20rpx 0 0 20rpx;
+    text-align: center;
+    width: 224rpx;
+}
+
+.tabLayer3 .active {
+    background-color: #dee5ff;
+    border-color: #4c6ff1;
+    color: #4c6ff1;
+}
+
+.tabLayer3 .title {
+    font-size: 32rpx;
+    font-weight: 700;
+    padding: 40rpx 20rpx 0;
+}
+
+.tabLayer4 view {
+    height: 80rpx;
+    line-height: 80rpx;
+    padding-left: 30rpx;
+    position: relative;
+}
+
+.tabBtn {
+    border-top: 1px solid #c6c6c6;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40rpx;
+    padding: 30rpx 30rpx 10rpx;
+}
+
+.tabBtn view {
+    background-color: #4c6ff1;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 32rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    width: 330rpx;
+}
+
+.tabBtn view:first-child {
+    background-color: #efefef;
+    color: #333;
+}
+
+.jzCont {
+    margin-top: 100rpx;
+}
+
+.rightCap {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 80rpx;
+    z-index: 10;
+}
+
+.rightCap view {
+    background-color: #e4e4e4;
+    border-radius: 50%;
+    color: #666;
+    font-size: 24rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    margin-top: 10rpx;
+    text-align: center;
+    width: 40rpx;
+}
+
+.rightCap view.active {
+    background-color: #4c6ff1;
+    color: #fff;
+}

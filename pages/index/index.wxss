@@ -1,0 +1,86 @@
+.nav {
+    margin-bottom: 30rpx;
+    margin-top: 30rpx;
+}
+
+.nav navigator {
+    margin-left: 30rpx;
+}
+
+.nav image,.nav navigator {
+    height: 210rpx;
+    width: 210rpx;
+}
+
+.nav1 {
+    margin-bottom: 50rpx;
+}
+
+.nav1 image {
+    width: 335rpx;
+}
+
+.nav1 .left {
+    margin-right: 20rpx;
+}
+
+.nav1 .left navigator {
+    margin-bottom: 20rpx;
+}
+
+.nav1 .left navigator:last-child {
+    margin-bottom: 0;
+}
+
+.nav1 .left image,.nav1 .left navigator {
+    height: 90rpx;
+}
+
+.nav1 .right image,.nav1 .right navigator {
+    height: 200rpx;
+}
+
+.wrapList .list {
+    border-bottom: 1rpx solid #eee;
+    padding: 30rpx 0;
+}
+
+.wrapList .tit {
+    font-size: 32rpx;
+    font-weight: 700;
+    margin-bottom: 20rpx;
+}
+
+.wrapList .cont {
+    display: flex;
+}
+
+.wrapList .img {
+    margin-right: 30rpx;
+}
+
+.wrapList .img image {
+    border-radius: 3px;
+    height: 120rpx;
+    width: 220rpx;
+}
+
+.wrapList .info {
+    margin-top: 10rpx;
+}
+
+.wrapList .info view {
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: #333;
+    display: -webkit-box;
+    font-size: 28rpx;
+    line-height: 1.8;
+    overflow: hidden;
+    text-overflow: -o-ellipsis-lastline;
+    text-overflow: ellipsis;
+}
+
+.jzCont {
+    margin-bottom: 20rpx;
+}

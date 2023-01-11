@@ -1,0 +1,7 @@
+<view class="container p10">
+    <view class="userList">
+        <view class="label">昵　 称：</view>{{userData.nickname}} </view>
+    <view class="userList">
+        <view class="label">手机号：</view>{{userData.tel}} </view>
+    <view bindtap="loginOut" class="loginquit">退出登录</view>
+</view>

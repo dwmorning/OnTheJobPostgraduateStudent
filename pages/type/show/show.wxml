@@ -1,0 +1,94 @@
+<view class="top p10">
+    <navigator url="../../showContent/index?catid={{catid}}&id={{banner.id}}">
+        <image src="/images/{{banner.thumb}}.png"></image>
+    </navigator>
+</view>
+<view class="main flex p10">
+    <view wx:for="{{mainList}}" wx:key="main">
+        <navigator url="../../{{item.url}}/{{item.url}}?typeid={{typeid}}&majortxt={{majortxt}}&majorid=0&schoolid=0">
+            <image src="/images/{{item.img}}.png"></image>
+        </navigator>
+    </view>
+</view>
+<view class="link clearfix p10">
+    <block wx:for="{{articleLink}}" wx:key="link">
+        <navigator url="../../showContent/index?catid={{catid}}&id={{item.id}}" wx:if="{{index<3}}">
+            <text>{{item.name}}</text>
+            <i class="iconfont icon-{{item.icon}}"></i>
+        </navigator>
+        <navigator url="../zixun/zixun?catid={{item.catid}}&typeid={{typeid}}&majorid=0" wx:if="{{index==3}}">
+            <text>{{item.name}}</text>
+            <i class="iconfont icon-{{item.icon}}"></i>
+        </navigator>
+        <navigator url="../zixun/zixun?catid=0&typeid={{typeid}}&majorid=0" wx:if="{{index==4}}">
+            <text>{{item.name}}</text>
+            <i class="iconfont icon-{{item.icon}}"></i>
+        </navigator>
+        <navigator class="{{kaoshi==false?'none':''}}" url="../kaoshi/kaoshi?catid=0&typeid={{typeid}}&majorid=0" wx:if="{{index==5}}">
+            <text>{{item.name}}</text>
+            <i class="iconfont icon-{{item.icon}}"></i>
+        </navigator>
+        <navigator class="{{kaoshi==false?'none':''}}" url="../../wenda/wenda?typeid={{typeid}}&majorid=0" wx:if="{{index==6}}">
+            <text>{{item.name}}</text>
+            <i class="iconfont icon-{{item.icon}}"></i>
+        </navigator>
+        <block wx:if="{{index==7}}">
+            <navigator url="../../baoming/baoming?title=&typeid={{typeid}}&school=" wx:if="{{hasLogin}}">
+                <text>{{item.name}}</text>
+                <i class="iconfont icon-{{item.icon}}"></i>
+            </navigator>
+            <button bindgetphonenumber="getPhoneNumber" openType="getPhoneNumber" wx:else>
+                <text>{{item.name}}</text>
+                <i class="iconfont icon-{{item.icon}}"></i>
+            </button>
+        </block>
+    </block>
+</view>
+<view class="wrap jzCont p10">
+    <view class="wpTit">
+        <text>热门简章</text>
+        <navigator class="more" url="../../rules/rules?typeid={{typeid}}&majortxt={{majortxt}}&majorid=0&schoolid=0">更多</navigator>
+    </view>
+    <navigator class="linee" url="../../rules/show/show?catid={{item.catid}}&id={{item.id}}&school={{item.xxmc}}&typeid={{typeid}}" wx:for="{{jzList}}" wx:key="jz">
+        <view class="list">
+            <view class="left">
+                <image src="https://www.125yan.com/Uploads/{{item.xxthumb}}" wx:if="{{item.xxthumb!==''}}"></image>
+            </view>
+            <view class="right">
+                <view class="tit">{{item.short_title}}<text class="pri">{{item.show_money}}</text>
+                </view>
+                <view class="sub">{{item.xxmc}} / {{item.xymc}}</view>
+                <view class="tag">
+                    <text>{{item.zymc}}</text>
+                    <text>{{item.length}}</text>
+                    <text>{{item.ksfs}}</text>
+                    <text>{{item.skdq}}</text>
+                </view>
+            </view>
+        </view>
+    </navigator>
+</view>
+<navigator class="moress" url="../../rules/rules?typeid={{typeid}}&majortxt={{majortxt}}&majorid=0&schoolid=0">查看更多</navigator>
+<view class="wrap p10">
+    <view class="wpTit">
+        <text>报考指南</text>
+        <navigator class="more" url="../zixun/zixun?catid=5&typeid={{typeid}}&majorid=0">更多</navigator>
+    </view>
+    <view class="wrapList">
+        <navigator url="../../showContent/index?catid={{item.catid}}&id={{item.id}}" wx:for="{{articleList}}" wx:key="zhinan">
+            <view class="list">
+                <view class="tit">{{item.title}}</view>
+                <view class="cont">
+                    <image class="img" src="https://www.125yan.com/Uploads/{{item.thumb}}" wx:if="{{item.thumb}}"></image>
+                    <view class="info">
+                        <view>{{item.description}}</view>
+                    </view>
+                </view>
+            </view>
+        </navigator>
+    </view>
+</view>
+<button class="kefu" openType="contact" sessionFrom="looyu">
+    <image class="kefu-img" mode="" src="/images/kf.png"></image>
+    <text class="kefu-txt">咨询</text>
+</button>

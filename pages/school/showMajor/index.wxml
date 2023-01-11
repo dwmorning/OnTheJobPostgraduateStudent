@@ -1,0 +1,229 @@
+<view class="p10" id="lxHeight">
+    <view wx:if="{{ifWarns}}">
+        <view class="stoptop">提示：此页面已停用，网站信息以最新内容为准！！！</view>
+        <view class="watermarks"></view>
+        <view bindtap="hideWarn" class="stopwarn-bg" wx:if="{{ifWarn}}"></view>
+        <view class="stopwarn" wx:if="{{ifWarn}}">
+            <view bindtap="hideWarn" class="stopwarn-c"></view>
+            <text class="stopwarn-i"></text>
+            <view class="stopwarn-t">
+                <view>提示：此页面已停用</view>网站信息以最新内容为准</view>
+            <navigator class="stopwarn-b" openType="reLaunch" url="/pages/index/index">返回首页</navigator>
+        </view>
+    </view>
+    <view class="top" style="background-color:{{schoolData.xuexiao_data.color}}">
+        <view class="logo">
+            <image bindtap="goSchool" src="https://www.125yan.com/Uploads/{{schoolData.xuexiao_data.logo}}" wx:if="{{schoolData.xuexiao_data.logo}}"></image>
+        </view>
+        <view class="mid">
+            <view class="tit">{{schoolData.xuexiao_data.xxtitle}}</view>
+            <view class="sub">
+                <block wx:if="{{schoolData.xuexiao_data.yxlx[0]!==null}}">
+                    <text wx:for="{{schoolData.xuexiao_data.yxlx}}" wx:key="lx">{{item}}</text>
+                </block>
+            </view>
+        </view>
+        <view class="right">
+            <view>简章：{{schoolData.jz_num}}篇</view>
+            <view>学费：{{schoolData.feiyong[0].min_money}}-{{schoolData.feiyong[0].max_money}}万</view>
+        </view>
+    </view>
+    <view class="lxCont">
+        <view class="tit">非全日制</view>
+        <view class="cont">
+            <view bindtap="majTap" class="{{item.major3==lxmajorid?'active':''}}" data-id="{{item.major3}}" data-name="{{item.urlname}}" wx:for="{{schoolData.list}}" wx:key="lx">
+                <view class="flex">
+                    <image src="https://www.125yan.com/Public/index/images/{{item.urlname}}1.png" wx:if="{{item.major3==lxmajorid}}"></image>
+                    <image src="https://www.125yan.com/Public/index/images/{{item.urlname}}.png" wx:else></image>
+                    <text>{{item.lxtitle}}</text>
+                </view>
+            </view>
+            <view wx:if="{{bmShow}}">
+                <navigator url="../../baoming/baoming?title=&typeid=2&school={{schoolData.xuexiao_data.xxtitle}}" wx:if="{{hasLogin}}">
+                    <image src="https://www.125yan.com/Public/index/images/zxbm.png"></image>
+                    <text>在线报名</text>
+                </navigator>
+                <button bindgetphonenumber="getPhoneNumber" openType="getPhoneNumber" wx:else>
+                    <image src="https://www.125yan.com/Public/index/images/zxbm.png"></image>
+                    <text>在线报名</text>
+                </button>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="p10 bgfff">
+    <view class="bigTab" id="lxTitHeight">
+        <view bindtap="filterTabb" class="flex1 {{!tabb[index]?'active':''}}" data-catid="{{item.catid}}" data-index="{{index}}" wx:for="{{tabTxtt}}" wx:key="tabb">
+            <text>{{item.name}}</text>
+        </view>
+    </view>
+    <view hidden="{{tabb[0]}}">
+        <view catchtouchmove="preventTouchMove" class="tabTit">
+            <view bindtap="filterTab" class="flex1 {{!tab[index]?'active':''}}" data-index="{{index}}" wx:for="{{tabTxt}}" wx:key="tab">
+                <text>{{item}}</text>
+                <i class="tabIcon"></i>
+            </view>
+        </view>
+        <view class="tabContent clearfix">
+            <view catchtouchmove="preventTouchMove" hidden="{{tab[0]}}">
+                <view class="tabLayer tabLayer1" style="height:{{scrollH}}px">
+                    <view catchtouchmove="preventTouchMove" class="mask"></view>
+                    <view class="cont clearfix">
+                        <view bindtap="filter" class="{{way_id==2?'active':''}}" data-areaid="{{area_id}}" data-areazid="{{areaz_id}}" data-id="2" data-index="0" data-majorid="{{major_id}}" data-schoolid="{{school_id}}" data-txt="方式" data-wayid="2">不限</view>
+                        <view bindtap="filter" class="{{way_id==item.id?'active':''}}" data-areaid="{{area_id}}" data-areazid="{{areaz_id}}" data-id="{{item.id}}" data-index="0" data-majorid="{{major_id}}" data-schoolid="{{school_id}}" data-txt="{{item.name}}" data-wayid="{{item.id}}" wx:for="{{schoolData.fs_arr}}" wx:key="way">{{item.name}}</view>
+                    </view>
+                </view>
+            </view>
+            <view catchtouchmove="preventTouchMove" hidden="{{tab[1]}}">
+                <scroll-view scrollY class="tabLayer tabLayer1" style="height:{{scrollH}}px">
+                    <view catchtouchmove="preventTouchMove" class="mask"></view>
+                    <view class="cont clearfix">
+                        <view bindtap="filter" class="{{school_id==0?'active':''}}" data-areaid="{{area_id}}" data-areazid="{{areaz_id}}" data-id="0" data-index="1" data-majorid="{{major_id}}" data-schoolid="0" data-txt="学院" data-wayid="{{way_id}}">不限</view>
+                        <view bindtap="filter" class="{{school_id==item.id?'active':''}}" data-areaid="{{area_id}}" data-areazid="{{areaz_id}}" data-id="{{item.id}}" data-index="1" data-majorid="{{major_id}}" data-schoolid="{{item.id}}" data-txt="{{item.title}}" data-wayid="{{way_id}}" wx:for="{{schoolData.xy_arr}}" wx:key="xy">{{item.title}}</view>
+                    </view>
+                </scroll-view>
+            </view>
+            <view catchtouchmove="preventTouchMove" hidden="{{tab[2]}}">
+                <scroll-view scrollY class="tabLayer tabLayer1" style="height:{{scrollH}}px">
+                    <view catchtouchmove="preventTouchMove" class="mask"></view>
+                    <view class="cont clearfix">
+                        <view bindtap="filter" class="{{major_id==0?'active':''}}" data-areaid="{{area_id}}" data-areazid="{{areaz_id}}" data-id="0" data-index="2" data-majorid="0" data-schoolid="{{school_id}}" data-txt="专业" data-wayid="{{way_id}}">不限</view>
+                        <view bindtap="filter" class="{{major_id==item.major3?'active':''}}" data-areaid="{{area_id}}" data-areazid="{{areaz_id}}" data-id="{{item.major3}}" data-index="2" data-majorid="{{item.major3}}" data-schoolid="{{school_id}}" data-txt="{{item.title}}" data-wayid="{{way_id}}" wx:for="{{schoolData.zy_arr}}" wx:key="zy">{{item.title}}</view>
+                    </view>
+                </scroll-view>
+            </view>
+            <view catchtouchmove="preventTouchMove" hidden="{{tab[3]}}">
+                <scroll-view scrollY class="tabLayer" style="height:{{scrollH}}px">
+                    <view catchtouchmove="preventTouchMove" class="mask"></view>
+                    <view class="tabLayer2 {{allArea==true?'show':''}}">
+                        <scroll-view scrollY class="left" style="max-height:{{scrollH}}px">
+                            <view bindtap="filter" class="{{area_id==0?'active':''}}" data-areaid="0" data-areazid="{{areaz_id}}" data-id="0" data-index="3" data-majorid="{{major_id}}" data-schoolid="{{school_id}}" data-txt="全部地区" data-wayid="{{way_id}}">全部地区</view>
+                            <view bindtap="filter" class="{{area_id==item.id?'active':''}}" data-area="allArea" data-areaid="{{item.id}}" data-areazid="{{areaz_id}}" data-id="{{item.id}}" data-index="3" data-majorid="{{major_id}}" data-schoolid="{{school_id}}" data-txt="{{item.name}}" data-wayid="{{way_id}}" wx:for="{{areaList}}" wx:key="area">{{item.name}}</view>
+                        </scroll-view>
+                        <scroll-view scrollY class="right" style="max-height:{{scrollH}}px">
+                            <view bindtap="filter" class="{{areaz_id==0?'active':''}}" data-area="allAreaz" data-areaid="{{area_id}}" data-areazid="0" data-id="0" data-index="3" data-majorid="{{major_id}}" data-schoolid="{{school_id}}" data-txt="{{ztxt}}" data-wayid="{{way_id}}">不限</view>
+                            <view bindtap="filter" class="{{areaz_id==item.id?'active':''}}" data-area="allAreaz" data-areaid="{{area_id}}" data-areazid="{{item.id}}" data-id="{{item.id}}" data-index="3" data-majorid="{{major_id}}" data-schoolid="{{school_id}}" data-txt="{{item.name}}" data-wayid="{{way_id}}" wx:for="{{areaListz}}" wx:key="areaz">{{item.name==null?'加载中':item.name}}</view>
+                        </scroll-view>
+                    </view>
+                </scroll-view>
+            </view>
+        </view>
+        <view class="jzConts">
+            <navigator url="../../rules/show/show?catid={{item.catid}}&id={{item.id}}&typeid=2&school={{schoolData.xuexiao_data.xxtitle}}" wx:for="{{jzList}}" wx:key="jz">
+                <view class="list">
+                    <view class="left">
+                        <view class="tit">
+                            <view>{{item.short_title}}</view>
+                            <text class="tag{{item.major0}}">{{item.lxname}}</text>
+                        </view>
+                        <view class="sub">
+                            <text>{{item.zyname}}</text>
+                            <text>{{item.length}}</text>
+                            <text>{{item.jzdq}}</text>
+                        </view>
+                        <view class="gzd">关注度：<view class="con">
+                                <view style="width:{{item.gzd}}"></view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="right">
+                        <view class="pri">{{item.show_money}}</view>
+                        <view class="btn">报名</view>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+    <view hidden="{{tabb[1]}}">
+        <view class="zixun">
+            <navigator url="../../showContent/index?catid={{item.catid}}&id={{item.id}}" wx:for="{{zixunList}}" wx:key="zixun">
+                <view class="item">
+                    <image class="img" src="https://www.125yan.com/Uploads/{{item.thumb}}" wx:if="{{item.thumb!==''}}"></image>
+                    <view class="info">
+                        <view class="tit">{{item.title}}</view>
+                        <view class="det">{{item.description}}</view>
+                        <view class="sub">
+                            <view>{{item.inputtime}}</view>
+                            <view>
+                                <i class="iconfont icon-see"></i>{{item.hits_num==null?'0':item.hits_num}}</view>
+                        </view>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+    <view hidden="{{tabb[2]}}">
+        <view class="zixun">
+            <navigator url="../../showContent/index?catid={{item.catid}}&id={{item.id}}" wx:for="{{zixunList}}" wx:key="zixun">
+                <view class="item">
+                    <image class="img" src="https://www.125yan.com/Uploads/{{item.thumb}}" wx:if="{{item.thumb!==''}}"></image>
+                    <view class="info">
+                        <view class="tit">{{item.title}}</view>
+                        <view class="det">{{item.description}}</view>
+                        <view class="sub">
+                            <view>{{item.inputtime}}</view>
+                            <view>
+                                <i class="iconfont icon-see"></i>{{item.hits_num==null?'0':item.hits_num}}</view>
+                        </view>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+    <view hidden="{{tabb[3]}}">
+        <view class="zixun">
+            <navigator url="../../showContent/index?catid={{item.catid}}&id={{item.id}}" wx:for="{{zixunList}}" wx:key="zixun">
+                <view class="item">
+                    <image class="img" src="https://www.125yan.com/Uploads/{{item.thumb}}" wx:if="{{item.thumb!==''}}"></image>
+                    <view class="info">
+                        <view class="tit">{{item.title}}</view>
+                        <view class="det">{{item.description}}</view>
+                        <view class="sub">
+                            <view>{{item.inputtime}}</view>
+                            <view>
+                                <i class="iconfont icon-see"></i>{{item.hits_num==null?'0':item.hits_num}}</view>
+                        </view>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+    <view hidden="{{tabb[4]}}">
+        <view class="zixun">
+            <navigator url="../../showContent/index?catid={{item.catid}}&id={{item.id}}" wx:for="{{zixunList}}" wx:key="zixun">
+                <view class="item">
+                    <image class="img" src="https://www.125yan.com/Uploads/{{item.thumb}}" wx:if="{{item.thumb!==''}}"></image>
+                    <view class="info">
+                        <view class="tit">{{item.title}}</view>
+                        <view class="det">{{item.description}}</view>
+                        <view class="sub">
+                            <view>{{item.inputtime}}</view>
+                            <view>
+                                <i class="iconfont icon-see"></i>{{item.hits_num==null?'0':item.hits_num}}</view>
+                        </view>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+    <view hidden="{{tabb[5]}}">
+        <view class="wdList">
+            <view class="list {{item.state==1?'show':''}}" wx:for="{{wdList}}" wx:key="wd">
+                <view catchtap="showCont" class="tit" data-index="{{index}}">
+                    <icon class="iconfont icon-wen"></icon>{{item.title}}<i class="iconfont icon-more"></i>
+                </view>
+                <view class="cont">
+                    <icon class="iconfont icon-da"></icon>{{item.description}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="nocontent" hidden="{{gobottom==true}}">已经到底了!</view>
+<view class="nocontent" hidden="{{nocont==true}}">没有更多了!</view>
+<view class="nocontent" hidden="{{loding==true}}">
+    <image class="loading" src="/images/load.gif"></image>
+</view>
+<button class="kefu" openType="contact" sessionFrom="looyu">
+    <image class="kefu-img" mode="" src="/images/kf.png"></image>
+    <text class="kefu-txt">咨询</text>
+</button>

@@ -1,0 +1,65 @@
+<view class="top p10">
+    <navigator url="../../showContent/index?catid={{catid}}&id={{banner.id}}">
+        <image src="/images/{{banner.thumb}}.png"></image>
+    </navigator>
+</view>
+<view class="main flex p10">
+    <view wx:for="{{mainList}}" wx:key="main">
+        <navigator url="../../{{item.url}}/{{item.url}}?typeid={{typeid}}&majorid={{majorid}}&lxid={{lxid}}">
+            <image src="/images/{{item.img}}.png"></image>
+        </navigator>
+    </view>
+</view>
+<view class="link clearfix p10">
+    <block wx:for="{{articleLink}}" wx:key="link">
+        <navigator url="../../showContent/index?catid={{catid}}&id={{item.id}}" wx:if="{{index<3}}">
+            <text>{{item.name}}</text>
+            <i class="iconfont icon-{{item.icon}}"></i>
+        </navigator>
+        <navigator url="../zixun/zixun?catid={{item.catid}}&typeid={{typeid}}&majorid={{majorid}}" wx:if="{{index==3}}">
+            <text>{{item.name}}</text>
+            <i class="iconfont icon-{{item.icon}}"></i>
+        </navigator>
+        <navigator url="../zixun/zixun?catid=0&typeid={{typeid}}&majorid={{majorid}}" wx:if="{{index==4}}">
+            <text>{{item.name}}</text>
+            <i class="iconfont icon-{{item.icon}}"></i>
+        </navigator>
+        <navigator url="../kaoshi/kaoshi?catid=0&typeid={{typeid}}&majorid={{majorid}}" wx:if="{{index==5}}">
+            <text>{{item.name}}</text>
+            <i class="iconfont icon-{{item.icon}}"></i>
+        </navigator>
+        <navigator url="../../wenda/wenda?typeid={{typeid}}&majorid={{majorid}}" wx:if="{{index==6}}">
+            <text>{{item.name}}</text>
+            <i class="iconfont icon-{{item.icon}}"></i>
+        </navigator>
+        <block wx:if="{{index==7}}">
+            <navigator url="../../baoming/baoming?title=&typeid=2" wx:if="{{hasLogin}}">
+                <text>{{item.name}}</text>
+                <i class="iconfont icon-{{item.icon}}"></i>
+            </navigator>
+            <button bindgetphonenumber="getPhoneNumber" openType="getPhoneNumber" wx:else>
+                <text>{{item.name}}</text>
+                <i class="iconfont icon-{{item.icon}}"></i>
+            </button>
+        </block>
+    </block>
+</view>
+<view class="wrap p10">
+    <view class="wpTit">
+        <text>报考指南</text>
+        <navigator class="more" url="../zixun/zixun?catid=5&typeid={{typeid}}&majorid={{majorid}}">更多</navigator>
+    </view>
+    <view class="wrapList">
+        <navigator url="../../showContent/index?catid={{item.catid}}&id={{item.id}}" wx:for="{{articleList}}" wx:key="zhinan">
+            <view class="list">
+                <view class="tit">{{item.title}}</view>
+                <view class="cont">
+                    <image class="img" src="https://www.125yan.com/Uploads/{{item.thumb}}" wx:if="{{item.thumb}}"></image>
+                    <view class="info">
+                        <view>{{item.description}}</view>
+                    </view>
+                </view>
+            </view>
+        </navigator>
+    </view>
+</view>

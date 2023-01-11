@@ -1,0 +1,125 @@
+.item {
+    background-color: #fff;
+    border-bottom: 1px solid #ebebeb;
+    border-radius: 4px;
+    display: flex;
+    padding: 25rpx;
+}
+
+.item .img {
+    display: block;
+    height: 160rpx;
+    margin-right: 20rpx;
+    width: 250rpx;
+}
+
+.item .info {
+    flex: 1;
+}
+
+.item .tit {
+    color: #333;
+    font-size: 32rpx;
+    font-weight: 700;
+}
+
+.item .det {
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: #666;
+    display: -webkit-box;
+    font-size: 28rpx;
+    margin: 20rpx 0 10rpx;
+    overflow: hidden;
+    text-overflow: -o-ellipsis-lastline;
+    text-overflow: ellipsis;
+}
+
+.item .sub {
+    color: #ccc;
+    display: flex;
+    font-size: 24rpx;
+    justify-content: space-between;
+}
+
+.item .sub .iconfont {
+    margin-right: 3px;
+    vertical-align: -2px;
+}
+
+.jzCont .list {
+    border-bottom: 1px solid #ebebeb;
+    display: flex;
+    justify-content: space-between;
+    padding: 25rpx 0;
+}
+
+.jzCont .left {
+    margin-right: 30rpx;
+    width: 100rpx;
+}
+
+.jzCont .left image {
+    height: 100rpx;
+    width: 100rpx;
+}
+
+.jzCont .right {
+    width: 560rpx;
+}
+
+.jzCont .tit {
+    font-size: 32rpx;
+    font-weight: 700;
+    padding-right: 100rpx;
+    position: relative;
+}
+
+.jzCont .pri {
+    color: #be4039;
+    font-size: 28rpx;
+    font-weight: bolder;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.jzCont .sub {
+    color: #666;
+    font-size: 24rpx;
+    margin-top: 14rpx;
+}
+
+.jzCont .tag text {
+    border: 1px solid #cdcdcd;
+    border-radius: 32rpx;
+    color: #999;
+    display: inline-block;
+    font-size: 24rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    margin-right: 10rpx;
+    margin-top: 10rpx;
+    overflow: hidden;
+    padding: 2px 8px;
+}
+
+.jzCont .tag text:first-child {
+    border-color: #ffb44c;
+    color: #ffb44c;
+    max-width: 180rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.jzCont .tag text:nth-child(3) {
+    border-color: #90a2f5;
+    color: #90a2f5;
+    max-width: 110rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.jzCont .tag text:last-child {
+    margin-right: 0;
+}

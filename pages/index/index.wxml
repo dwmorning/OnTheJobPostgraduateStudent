@@ -1,0 +1,74 @@
+<view class="nav flex">
+    <navigator url="../zzss/zzss">
+        <image src="/images/zzsss.png"></image>
+    </navigator>
+    <navigator url="../zzbs/zzbs">
+        <image src="/images/zzbss.png"></image>
+    </navigator>
+    <navigator url="../gdkc/gdkc">
+        <image src="/images/gdkc.png"></image>
+    </navigator>
+</view>
+<view class="nav1 flex p10">
+    <view class="left">
+        <navigator url="../xuexiao/xuexiao">
+            <image src="/images/xxk.png"></image>
+        </navigator>
+        <navigator url="../zhuanye/zhuanye">
+            <image src="/images/zyk.png"></image>
+        </navigator>
+    </view>
+    <navigator class="right" openType="reLaunch" url="../jianzhang/jianzhang">
+        <image src="/images/jzk.png"></image>
+    </navigator>
+</view>
+<view class="jzCont p10">
+    <view class="wpTit">
+        <text>热门简章</text>
+        <navigator class="more" openType="reLaunch" url="../jianzhang/jianzhang">更多</navigator>
+    </view>
+    <navigator class="linee" url="../rules/show/show?catid={{item.catid}}&id={{item.id}}&school={{item.xxmc}}&typeid={{typeid}}" wx:for="{{jzList}}" wx:key="jz">
+        <view class="list">
+            <view class="left">
+                <image src="https://www.125yan.com/Uploads/{{item.xxthumb}}" wx:if="{{item.xxthumb!==''}}"></image>
+            </view>
+            <view class="right">
+                <view class="tit">{{item.short_title}}<text class="pri">{{item.show_money}}</text>
+                </view>
+                <view class="sub">{{item.xxmc}} / {{item.xymc}}</view>
+                <view class="tag">
+                    <text>{{item.zymc}}</text>
+                    <text>{{item.length}}</text>
+                    <text>{{item.ksfs}}</text>
+                    <text>{{item.skdq}}</text>
+                </view>
+            </view>
+        </view>
+    </navigator>
+</view>
+<navigator class="moress" openType="reLaunch" url="../jianzhang/jianzhang">查看更多</navigator>
+<view class="wrap p10">
+    <view class="wpTit">
+        <text>报考指南</text>
+        <navigator class="more" url="../zhuanti/zhuanti">更多</navigator>
+    </view>
+    <view class="wrapList">
+        <navigator url="../showContent/index?catid={{item.catid}}&id={{item.id}}" wx:for="{{zhiNan}}" wx:for-index="i" wx:key="zhinan">
+            <view class="list">
+                <view class="tit">{{item.title}}</view>
+                <view class="cont">
+                    <view class="img">
+                        <image src="https://www.125yan.com/Uploads/{{item.thumb}}"></image>
+                    </view>
+                    <view class="info">
+                        <view>{{item.description}}</view>
+                    </view>
+                </view>
+            </view>
+        </navigator>
+    </view>
+</view>
+<button class="kefu" openType="contact" sessionFrom="looyu">
+    <image class="kefu-img" mode="" src="/images/kf.png"></image>
+    <text class="kefu-txt">咨询</text>
+</button>

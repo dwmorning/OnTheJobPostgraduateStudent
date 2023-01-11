@@ -1,0 +1,204 @@
+.dbTab {
+    margin-bottom: 60rpx;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+}
+
+.list {
+    align-items: center;
+    border-bottom: 1px solid #ececec;
+    border-left: 1px solid #ececec;
+    border-right: 1px solid #ececec;
+    display: flex;
+    font-size: 24rpx;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+
+.list:after {
+    clear: both;
+    content: "";
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.listv {
+    padding: 20rpx;
+    width: 50%;
+}
+
+.mid {
+    width: 130rpx;
+}
+
+.top .listv {
+    padding: 0 40rpx;
+}
+
+.top .list {
+    border-color: #4c6ff1;
+}
+
+.top .mid {
+    background-image: url("https://www.125yan.com/Public/m_index/images/vs.png");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 120%;
+    height: 242rpx;
+    width: 179rpx;
+}
+
+.top {
+    background-color: #4c6ff1;
+    color: #fff;
+}
+
+.top .way {
+    font-size: 24rpx;
+    position: relative;
+    z-index: 2;
+}
+
+.top .way text {
+    background-color: #ff9400;
+    border-radius: 50%;
+    display: inline-block;
+    font-size: 20rpx;
+    height: 24rpx;
+    line-height: 24rpx;
+    margin-left: 6rpx;
+    vertical-align: 2px;
+    width: 24rpx;
+}
+
+.top .tit {
+    font-size: 36rpx;
+    margin-bottom: 20rpx;
+}
+
+.top .btn,.top .tit {
+    position: relative;
+    z-index: 2;
+}
+
+.top .btn navigator {
+    background-color: #4cbdf1;
+    border-radius: 50rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+}
+
+.cont .listv {
+    box-sizing: border-box;
+    padding-right: 85rpx;
+}
+
+.cont .listv:last-child {
+    box-sizing: border-box;
+    padding-left: 85rpx;
+    padding-right: 20rpx;
+}
+
+.cont .mid {
+    align-items: center;
+    background-color: #f5f5f5;
+    border-left: 1px solid #ececec;
+    border-right: 1px solid #ececec;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 50%;
+    margin-left: -65rpx;
+    position: absolute;
+}
+
+.cont .icon-xing {
+    color: #f0910e;
+    margin-top: -8px;
+}
+
+.cont .num {
+    margin-bottom: 15rpx;
+}
+
+.cont .need {
+    border: 1px solid #ff9400;
+    border-radius: 50rpx;
+    color: #ff9400;
+    display: inline-block;
+    font-size: 24rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    padding: 0 40rpx;
+    vertical-align: middle;
+}
+
+.cont .need.active {
+    background-color: #ff9400;
+    border-color: #fff;
+    color: #fff;
+}
+
+.cont .icon-xin {
+    font-size: 14px;
+}
+
+.cont .lk {
+    color: #4a6cf0;
+}
+
+.cont .lk,.cont .zx {
+    display: inline-block;
+    font-size: 24rpx;
+}
+
+.cont .zx {
+    background: none;
+    color: #ff9400;
+    line-height: normal;
+    padding: 0;
+    vertical-align: -3px;
+}
+
+.cont .zx,.cont .zx:after {
+    border: none;
+}
+
+.cont .icon-no,.cont .icon-yes {
+    font-size: 14px;
+    margin-right: 4px;
+    vertical-align: -1px;
+}
+
+.cont .icon-yes {
+    color: #73da73;
+}
+
+.cont .icon-no {
+    color: #da7773;
+}
+
+.cont .c1 {
+    color: #dd3635;
+}
+
+.cont .more {
+    border: 1px solid #476ecc;
+    border-radius: 30rpx;
+    color: #476ecc;
+    display: inline-block;
+    height: 40rpx;
+    line-height: 40rpx;
+    margin-top: 10rpx;
+    padding: 0 20rpx;
+    text-align: center;
+}
+
+.cont .more.bgc {
+    background-color: #476ecc;
+    color: #fff;
+    margin-top: 0;
+}

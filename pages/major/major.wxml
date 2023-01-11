@@ -1,0 +1,28 @@
+<view class="p10" wx:if="{{zyss}}">
+    <view class="hot">
+        <view class="tit">热门专业</view>
+        <view class="cont">
+            <view wx:for="{{hotList}}" wx:key="hot">
+                <navigator url="../type/showMajor/showMajor?typeid={{typeid}}&majorid={{item.id}}">{{item.name}}</navigator>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="malt">
+    <view bindtap="jumpTo" class="{{item.num==0?'gray':''}}" data-malt="go{{item.menlei_id}}" wx:for="{{majorList}}" wx:key="malt">{{item.menlei_name}}</view>
+</view>
+<scroll-view scrollY scrollIntoView="{{toView}}" scrollWithAnimation="true" style="height:{{scrollH}}px">
+    <view class="majCont p10">
+        <block wx:for="{{majorList}}" wx:key="list">
+            <view class="title" id="go{{item.menlei_id}}" wx:if="{{item.num!==0}}">{{item.menlei_name}}<text>{{item.num}}个专业</text>
+            </view>
+            <view class="list" wx:for="{{item.major}}" wx:for-item="major" wx:key="m">
+                <navigator url="../rules/rules?typeid={{typeid}}&majorid={{major.major3}}&schoolid=0">
+                    <view class="tit">{{major.short_title}}</view>
+                    <view class="sub">简章：<text>{{major.num==null?'0':major.num}}篇</text>学费：<text class="c2">{{major.min_money==null?'0':major.min_money}}~{{major.max_money==null?'0':major.max_money}}元</text>
+                    </view>
+                </navigator>
+            </view>
+        </block>
+    </view>
+</scroll-view>
